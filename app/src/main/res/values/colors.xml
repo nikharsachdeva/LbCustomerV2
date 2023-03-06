@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="colorPurplish">#6B6D92</color>
+    <color name="colorOrange">#FF7E59</color>
+    <color name="colorPurple">#8FA1FF</color>
+    <color name="colorPink">#FF81A9</color>
+    <color name="colorGreen">#6ECFBD</color>
+    <color name="bottomNavBg">#070A11</color>
+    <color name="unselectedIconColor">#6B6D92</color>
+    <color name="colorVoilate">#8E5AFF</color>
+    <color name="primary">#edb361</color>
+    <color name="primaryLight">#edb336</color>
+    <color name="secondary">#35291d</color>
+    <color name="secondaryLight">#5e3f22</color>
+    <color name="colorPlaceholder">#dddddd</color>
+
+
+</resources>

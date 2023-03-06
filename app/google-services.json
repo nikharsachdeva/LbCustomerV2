@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "68705697038",
+    "project_id": "lbcustomerv2",
+    "storage_bucket": "lbcustomerv2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:68705697038:android:573a2ca00fdd0d49d26b5f",
+        "android_client_info": {
+          "package_name": "com.laundrybuoy.customer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "68705697038-li0idaeravslrvvj4s9qjedt8taaiomm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.laundrybuoy.customer",
+            "certificate_hash": "7f84fcbc22f7f1663f83ebf2fbbd4f16b4a12519"
+          }
+        },
+        {
+          "client_id": "68705697038-6c6vfmfhn4c7t9t2vpao8f50hqfb4q90.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoGRnrt28RHnpaqpopv8uuYplCETTTxQU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "68705697038-6c6vfmfhn4c7t9t2vpao8f50hqfb4q90.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
