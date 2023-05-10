@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_marginStart="@dimen/dimen_5dp"
+    android:layout_marginTop="@dimen/dimen20dp"
+    android:layout_marginEnd="@dimen/dimen_5dp"
+    android:elevation="2dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/row_faq_child_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/row_faq_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/dimen10dp"
+                android:layout_marginTop="@dimen/dimen10dp"
+                android:layout_marginEnd="@dimen/dimen10dp"
+                android:layout_marginBottom="@dimen/dimen10dp"
+                android:layout_toStartOf="@id/item_arrow_frame"
+                android:fontFamily="@font/lexend_medium"
+                android:text="This is question one"
+                android:textColor="@color/colorHeading"
+                android:textSize="14sp" />
+
+            <FrameLayout
+                android:id="@+id/item_arrow_frame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="@dimen/dimen10dp">
+
+                <ImageView
+                    android:id="@+id/item_faq_arrow_down"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
+                    android:visibility="gone"
+                    app:tint="@color/black" />
+
+                <ImageView
+                    android:id="@+id/item_faq_arrow_up"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_keyboard_arrow_up_24"
+                    android:visibility="gone"
+                    app:tint="@color/black" />
+
+            </FrameLayout>
+
+        </RelativeLayout>
+
+
+        <View
+            android:id="@+id/item_faq_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/row_faq_child_rl"
+            android:layout_marginTop="@dimen/dimen10dp"
+            android:background="@color/colorGreyHeading"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/row_faq_answer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_faq_divider"
+            android:layout_marginStart="@dimen/dimen10dp"
+            android:layout_marginTop="@dimen/dimen10dp"
+            android:layout_marginEnd="@dimen/dimen10dp"
+            android:layout_marginBottom="@dimen/dimen10dp"
+            android:fontFamily="@font/lexend_regular"
+            android:text="@string/lorem_ipsum"
+            android:textColor="@color/colorSubHeading"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+

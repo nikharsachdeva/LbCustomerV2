@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dimen_5dp">
+
+    <LinearLayout
+        android:id="@+id/itemRootAnamika_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/itemAttributeName_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/dimen10dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/lexend_regular"
+            android:textColor="@color/colorDarkerBlue"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/itemExpected_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/dimen10dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/lexend_regular"
+            android:textColor="@color/colorDarkerBlue"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/itemActual_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:fontFamily="@font/lexend_regular"
+            android:text="-"
+            android:textColor="@color/colorDarkerBlue"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/itemRootAnamika_ll"
+        android:layout_marginTop="@dimen/dimen10dp"
+        android:background="@color/colorGreyHeading" />
+</RelativeLayout>

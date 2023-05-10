@@ -1,14 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/order_bg_gradient"
+    android:padding="@dimen/dimen20dp"
     tools:context=".ui.OrdersFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/myOrderHeading_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lexend_bold"
+        android:text="@string/my_orders"
+        android:textColor="@color/colorGreen"
+        android:textSize="32sp" />
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Order Fragment" />
+        android:layout_below="@id/myOrderHeading_tv"
+        android:layout_marginTop="@dimen/dimen20dp">
 
-</FrameLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/customerOrder_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/ordersUnAvailable_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:visibility="gone">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/no_data"
+                app:lottie_speed="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_button_4px"
+                android:backgroundTint="#1030b856"
+                android:fontFamily="@font/lexend_regular"
+                android:padding="10dp"
+                android:text="@string/no_orders_available"
+                android:textColor="@color/colorDarkerBlue"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/myOrderShimmer_sv"
+        layout="@layout/shimmer_transaction"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/myOrderHeading_tv"
+        android:layout_marginTop="@dimen/dimen20dp" />
+
+</RelativeLayout>

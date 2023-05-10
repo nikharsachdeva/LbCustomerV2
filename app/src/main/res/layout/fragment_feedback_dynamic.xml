@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.FeedbackDynamicFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/submitFeedback_btn"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/closeFeedback_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_margin="@dimen/dimen10dp"
+                android:src="@drawable/ic_baseline_close_24"
+                app:tint="@color/colorHeading" />
+
+            <TextView
+                android:id="@+id/rateServiceHeading_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/lexend_regular"
+                android:textColor="@color/colorGreyHeading"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="100dp"
+                android:layout_height="3dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dimen10dp"
+                android:layout_marginBottom="@dimen/dimen10dp"
+                android:background="@drawable/rounded_button_4px"
+                android:backgroundTint="@color/coinsMain" />
+
+            <TextView
+                android:id="@+id/serviceName_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dimen10dp"
+                android:fontFamily="@font/lexend_bold"
+                android:text="Dry Clean"
+                android:textColor="@color/colorDarkerBlue"
+                android:textSize="28sp" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dimen10dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/serviceFor_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/lexend_regular"
+                        android:text="Picked Up"
+                        android:textColor="@color/colorGreyHeading"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/dimen10dp"
+                        android:layout_marginEnd="@dimen/dimen10dp"
+                        android:background="@drawable/circle_bg"
+                        android:backgroundTint="@color/colorGreyHeading" />
+
+                    <TextView
+                        android:id="@+id/orderNumber_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/lexend_regular"
+                        android:text="ORD16029938374"
+                        android:textColor="@color/colorGreyHeading"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/dimen10dp"
+                        android:layout_marginEnd="@dimen/dimen10dp"
+                        android:background="@drawable/circle_bg"
+                        android:backgroundTint="@color/colorGreyHeading" />
+
+                    <TextView
+                        android:id="@+id/orderDate_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/lexend_regular"
+                        android:text="14th May 2023 04:30PM"
+                        android:textColor="@color/colorGreyHeading"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/emojiRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen20dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="5"
+                tools:listitem="@layout/row_item_emoji" />
+
+            <LinearLayout
+                android:id="@+id/feedbackExtra_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/dimen20dp"
+                    android:layout_marginBottom="@dimen/dimen20dp"
+                    android:background="@color/colorGreyHeading" />
+
+                <TextView
+                    android:id="@+id/whatWentWrong_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/lexend_regular"
+                    android:textColor="@color/colorGreyHeading"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="3dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/dimen10dp"
+                    android:layout_marginBottom="@dimen/dimen10dp"
+                    android:background="@drawable/rounded_button_4px"
+                    android:backgroundTint="@color/coinsMain" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/badges_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen10dp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/row_item_badge" />
+
+                <EditText
+                    android:id="@+id/feedbackDesc_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/bg_item_border_unselected"
+                    android:fontFamily="@font/lexend_regular"
+                    android:gravity="start"
+                    android:hint="Any suggestions? (optional)"
+                    android:imeOptions="actionDone"
+                    android:inputType="textMultiLine"
+                    android:lines="3"
+                    android:padding="20dp"
+                    android:textColor="@color/colorHeading"
+                    android:textColorHint="@color/colorGreyHeading"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/feedbackLine_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/dimen10dp"
+                    android:fontFamily="@font/lexend_regular"
+                    android:text="@string/help_us_improve"
+                    android:textColor="@color/colorGreyHeading"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/submitFeedback_btn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:alpha="0.7"
+        android:background="@drawable/rounded_button_8px"
+        android:enabled="false"
+        android:fontFamily="@font/lexend_medium"
+        android:text="Submit"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:backgroundTint="@color/colorBlueBtn"
+        app:icon="@drawable/ic_tick_circle"
+        app:iconGravity="textStart" />
+
+</RelativeLayout>

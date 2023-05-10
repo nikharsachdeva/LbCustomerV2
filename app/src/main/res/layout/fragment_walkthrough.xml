@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:layoutAnimation="@anim/layout_animation_fade_enter"
+    tools:context=".ui.WalkthroughFragment">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/walkthroughPager_vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/dimen20dp"
+        android:clipChildren="false">
+
+        <club.cred.synth.views.SynthImageButton
+            android:id="@+id/prevWalk_btn"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginEnd="@dimen/dimen20dp"
+            android:gravity="center"
+            android:padding="20dp"
+            app:neuButtonRadius="28dp"
+            app:neuButtonType="elevated_soft"
+            app:neuFlatButtonColor="@color/colorPurple"
+            app:neuPlatformColor="@color/colorPurple"
+            app:srcCompat="@drawable/arrow_back_ios_new_24"
+            app:tint="@color/white" />
+
+        <LinearLayout
+            android:id="@+id/indicatorIntro_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen20dp"
+            android:layout_toStartOf="@id/nextWalk_btn"
+            android:layout_toEndOf="@id/prevWalk_btn"
+            android:orientation="horizontal" />
+
+
+        <club.cred.synth.views.SynthImageButton
+            android:id="@+id/nextWalk_btn"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/dimen20dp"
+            android:gravity="center"
+            android:padding="20dp"
+            app:neuButtonRadius="28dp"
+            app:neuButtonType="elevated_soft"
+            app:neuFlatButtonColor="@color/colorPurple"
+            app:neuPlatformColor="@color/colorPurple"
+            app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
+            app:tint="@color/white" />
+
+        <club.cred.synth.views.SynthButton
+            android:id="@+id/finishWalk_btn"
+            android:layout_width="150dp"
+            android:layout_height="56dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerHorizontal="true"
+            android:drawablePadding="14dp"
+            android:fontFamily="@font/lexend_regular"
+            android:gravity="center"
+            android:paddingStart="8dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="10dp"
+            android:text="Finish"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:visibility="gone"
+            app:neuButtonCompatColor="@color/colorBlueBtn"
+            app:neuButtonDrawable="@drawable/ic_baseline_check_24"
+            app:neuButtonDrawablePitRadius="20dp"
+            app:neuButtonRadius="28dp"
+            app:neuButtonType="elevated_soft"
+            app:neuFlatButtonColor="@color/colorBlueBtn"
+            app:neuPlatformColor="@color/colorBlueBtn" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

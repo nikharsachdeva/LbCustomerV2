@@ -11,6 +11,9 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
 import com.laundrybuoy.customer.databinding.ActivityMainBinding
 import com.laundrybuoy.customer.ui.*
+import com.laundrybuoy.customer.ui.quick.QuickOrderRootFragment
+import com.laundrybuoy.customer.utils.makeViewGone
+import com.laundrybuoy.customer.utils.makeViewVisible
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 
@@ -32,6 +35,7 @@ class MainActivity : ParentActivity(), View.OnClickListener {
     private fun manageClicks() {
         binding.bottomNavLayout.ivTabHome?.setOnClickListener(this)
         binding.bottomNavLayout.ivTabPlus?.setOnClickListener(this)
+        binding.bottomNavLayout.ivTabSchedule?.setOnClickListener(this)
         binding.bottomNavLayout.ivTabPrices?.setOnClickListener(this)
         binding.bottomNavLayout.ivTabAccount?.setOnClickListener(this)
         binding.bottomNavLayout.ivTabOrder?.setOnClickListener(this)
@@ -44,7 +48,7 @@ class MainActivity : ParentActivity(), View.OnClickListener {
 
     override fun onClick(view: View) {
         when (view.id) {
-            R.id.ivTabHome, R.id.ivTabPlus, R.id.ivTabPrices, R.id.ivTabAccount, R.id.ivTabOrder -> handleBottomNavTabClicks(
+            R.id.ivTabHome, R.id.ivTabPlus, R.id.ivTabPrices, R.id.ivTabAccount, R.id.ivTabOrder, R.id.ivTabSchedule -> handleBottomNavTabClicks(
                 view
             )
         }
@@ -92,12 +96,22 @@ class MainActivity : ParentActivity(), View.OnClickListener {
                 )
 
 
+                binding.bottomNavLayout.tvTabPlus.setTextColor(resources.getColor(R.color.unselectedIconColor))
                 binding.bottomNavLayout.tvTabPlus.setTypeface(
                     binding.bottomNavLayout.tvTabPlus.typeface,
                     Typeface.NORMAL
                 )
                 binding.bottomNavLayout.tvTabPlus.setTextColor(resources.getColor(R.color.unselectedIconColor))
-                binding.bottomNavLayout.ivTabPlus.setImageDrawable(resources.getDrawable(R.drawable.ic_diamond))
+
+                binding.bottomNavLayout.tvTabSchedule.setTextColor(resources.getColor(R.color.unselectedIconColor))
+                binding.bottomNavLayout.tvTabSchedule.setTypeface(
+                    binding.bottomNavLayout.tvTabSchedule.typeface,
+                    Typeface.NORMAL
+                )
+                binding.bottomNavLayout.tvTabSchedule.setTextColor(resources.getColor(R.color.unselectedIconColor))
+
+
+//                binding.bottomNavLayout.ivTabPlus.setImageDrawable(resources.getDrawable(R.drawable.ic_diamond))
 
 
                 binding.bottomNavLayout.tvTabPrices.setTypeface(
@@ -134,6 +148,7 @@ class MainActivity : ParentActivity(), View.OnClickListener {
 
 
             }
+
             R.id.ivTabOrder -> {
 
                 if (binding.rlFragmentContainer2.visibility == View.VISIBLE) {
@@ -182,8 +197,15 @@ class MainActivity : ParentActivity(), View.OnClickListener {
                     Typeface.NORMAL
                 )
                 binding.bottomNavLayout.tvTabPlus.setTextColor(resources.getColor(R.color.unselectedIconColor))
-                binding.bottomNavLayout.ivTabPlus.setImageDrawable(resources.getDrawable(R.drawable.ic_diamond))
+//                binding.bottomNavLayout.ivTabPlus.setImageDrawable(resources.getDrawable(R.drawable.ic_diamond))
 
+
+                binding.bottomNavLayout.tvTabSchedule.setTextColor(resources.getColor(R.color.unselectedIconColor))
+                binding.bottomNavLayout.tvTabSchedule.setTypeface(
+                    binding.bottomNavLayout.tvTabSchedule.typeface,
+                    Typeface.NORMAL
+                )
+                binding.bottomNavLayout.tvTabSchedule.setTextColor(resources.getColor(R.color.unselectedIconColor))
 
                 binding.bottomNavLayout.tvTabPrices.setTypeface(
                     binding.bottomNavLayout.tvTabPrices.typeface,
@@ -219,6 +241,7 @@ class MainActivity : ParentActivity(), View.OnClickListener {
 
 
             }
+
             R.id.ivTabPlus -> {
                 if (binding.rlFragmentContainer3.visibility == View.VISIBLE) {
                     if (fragmentStack3.size > 1) {
@@ -232,7 +255,14 @@ class MainActivity : ParentActivity(), View.OnClickListener {
                     Typeface.BOLD
                 )
                 binding.bottomNavLayout.tvTabPlus.setTextColor(resources.getColor(R.color.colorPink))
-                binding.bottomNavLayout.ivTabPlus.setImageDrawable(resources.getDrawable(R.drawable.ic_diamond))
+//                binding.bottomNavLayout.ivTabPlus.setImageDrawable(resources.getDrawable(R.drawable.ic_diamond))
+
+                binding.bottomNavLayout.tvTabSchedule.setTextColor(resources.getColor(R.color.unselectedIconColor))
+                binding.bottomNavLayout.tvTabSchedule.setTypeface(
+                    binding.bottomNavLayout.tvTabSchedule.typeface,
+                    Typeface.NORMAL
+                )
+                binding.bottomNavLayout.tvTabSchedule.setTextColor(resources.getColor(R.color.unselectedIconColor))
 
 
                 binding.rlFragmentContainer1.visibility = View.GONE
@@ -295,13 +325,125 @@ class MainActivity : ParentActivity(), View.OnClickListener {
 
 
                 if (getVisibleFrameStakList()!!.size == 0) {
-                    addFragment(false, 3, PlusFragment())
+                    addFragment(false, 3, PlusIntroFragment())
                 }
 
                 updateFragments()
 
 
             }
+
+            R.id.ivTabSchedule -> {
+
+                val quickFrag = QuickOrderRootFragment()
+                quickFrag.isCancelable = false
+
+                val currFrag = getCurrentFragment()
+                if (currFrag is HomeFragment) {
+                    quickFrag.setCallback {
+                        currFrag.fetchHomeScreenData()
+                    }
+                } else if (currFrag is OrdersFragment) {
+                    quickFrag.setCallback {
+                        currFrag.fetchUserOrders()
+                    }
+                }
+
+                quickFrag.show(supportFragmentManager, "quick_frag")
+
+            }
+
+//            R.id.ivTabSchedule -> {
+//                if (binding.rlFragmentContainer3.visibility == View.VISIBLE) {
+//                    if (fragmentStack3.size > 1) {
+//                        removeCurrentFragment()
+//                    }
+//                    return
+//                }
+//
+//                binding.bottomNavLayout.tvTabSchedule.setTypeface(
+//                    binding.bottomNavLayout.tvTabSchedule.typeface,
+//                    Typeface.BOLD
+//                )
+//                binding.bottomNavLayout.tvTabSchedule.setTextColor(resources.getColor(R.color.colorPink))
+////                binding.bottomNavLayout.ivTabPlus.setImageDrawable(resources.getDrawable(R.drawable.ic_diamond))
+//
+//                binding.rlFragmentContainer1.visibility = View.GONE
+//                binding.rlFragmentContainer2.visibility = View.GONE
+//                binding.rlFragmentContainer3.visibility = View.VISIBLE
+//                binding.rlFragmentContainer4.visibility = View.GONE
+//                binding.rlFragmentContainer5.visibility = View.GONE
+//
+//                binding.bottomNavLayout.tvTabHome.setTypeface(
+//                    binding.bottomNavLayout.tvTabHome.typeface,
+//                    Typeface.BOLD
+//                )
+//                binding.bottomNavLayout.tvTabHome.setTextColor(resources.getColor(R.color.unselectedIconColor))
+//                binding.bottomNavLayout.ivTabHome.setImageDrawable(resources.getDrawable(R.drawable.ic_home))
+//                binding.bottomNavLayout.ivTabHome.setColorFilter(
+//                    ContextCompat.getColor(
+//                        applicationContext,
+//                        R.color.unselectedIconColor
+//                    ), PorterDuff.Mode.SRC_IN
+//                )
+//
+//                binding.bottomNavLayout.tvTabPlus.setTextColor(resources.getColor(R.color.unselectedIconColor))
+//                binding.bottomNavLayout.tvTabPlus.setTypeface(
+//                    binding.bottomNavLayout.tvTabPlus.typeface,
+//                    Typeface.NORMAL
+//                )
+//                binding.bottomNavLayout.tvTabPlus.setTextColor(resources.getColor(R.color.unselectedIconColor))
+//
+//                binding.bottomNavLayout.tvTabOrder.setTypeface(
+//                    binding.bottomNavLayout.tvTabOrder.typeface,
+//                    Typeface.NORMAL
+//                )
+//                binding.bottomNavLayout.tvTabOrder.setTextColor(resources.getColor(R.color.unselectedIconColor))
+//                binding.bottomNavLayout.ivTabOrder.setImageDrawable(resources.getDrawable(R.drawable.ic_order))
+//                binding.bottomNavLayout.ivTabOrder.setColorFilter(
+//                    ContextCompat.getColor(
+//                        applicationContext,
+//                        R.color.unselectedIconColor
+//                    ), PorterDuff.Mode.SRC_IN
+//                )
+//
+//                binding.bottomNavLayout.tvTabPrices.setTypeface(
+//                    binding.bottomNavLayout.tvTabPrices.typeface,
+//                    Typeface.NORMAL
+//                )
+//                binding.bottomNavLayout.tvTabPrices.setTextColor(resources.getColor(R.color.unselectedIconColor))
+//                binding.bottomNavLayout.ivTabPrices.setImageDrawable(resources.getDrawable(R.drawable.ic_price))
+//                binding.bottomNavLayout.ivTabPrices.setColorFilter(
+//                    ContextCompat.getColor(
+//                        applicationContext,
+//                        R.color.unselectedIconColor
+//                    ), PorterDuff.Mode.SRC_IN
+//                )
+//
+//                binding.bottomNavLayout.tvTabAccount.setTypeface(
+//                    binding.bottomNavLayout.tvTabAccount.typeface,
+//                    Typeface.NORMAL
+//                )
+//                binding.bottomNavLayout.tvTabAccount.setTextColor(resources.getColor(R.color.unselectedIconColor))
+//                binding.bottomNavLayout.ivTabAccount.setImageDrawable(resources.getDrawable(R.drawable.ic_user))
+//                binding.bottomNavLayout.ivTabAccount.setColorFilter(
+//                    ContextCompat.getColor(
+//                        applicationContext,
+//                        R.color.unselectedIconColor
+//                    ), PorterDuff.Mode.SRC_IN
+//                )
+//
+//
+//                if (getVisibleFrameStakList()!!.size == 0) {
+//
+//                    addFragment(false, 3, ScheduleFragment())
+//                }
+//
+//                updateFragments()
+//
+//
+//            }
+
             R.id.ivTabPrices -> {
 
                 if (binding.rlFragmentContainer4.visibility == View.VISIBLE) {
@@ -361,7 +503,15 @@ class MainActivity : ParentActivity(), View.OnClickListener {
                     Typeface.NORMAL
                 )
                 binding.bottomNavLayout.tvTabPlus.setTextColor(resources.getColor(R.color.unselectedIconColor))
-                binding.bottomNavLayout.ivTabPlus.setImageDrawable(resources.getDrawable(R.drawable.ic_diamond))
+
+                binding.bottomNavLayout.tvTabSchedule.setTextColor(resources.getColor(R.color.unselectedIconColor))
+                binding.bottomNavLayout.tvTabSchedule.setTypeface(
+                    binding.bottomNavLayout.tvTabSchedule.typeface,
+                    Typeface.NORMAL
+                )
+                binding.bottomNavLayout.tvTabSchedule.setTextColor(resources.getColor(R.color.unselectedIconColor))
+
+//                binding.bottomNavLayout.ivTabPlus.setImageDrawable(resources.getDrawable(R.drawable.ic_diamond))
 
 
                 binding.bottomNavLayout.tvTabAccount.setTypeface(
@@ -387,6 +537,7 @@ class MainActivity : ParentActivity(), View.OnClickListener {
 
 
             }
+
             R.id.ivTabAccount -> {
 
                 if (binding.rlFragmentContainer5.visibility == View.VISIBLE) {
@@ -447,7 +598,14 @@ class MainActivity : ParentActivity(), View.OnClickListener {
                     Typeface.NORMAL
                 )
                 binding.bottomNavLayout.tvTabPlus.setTextColor(resources.getColor(R.color.unselectedIconColor))
-                binding.bottomNavLayout.ivTabPlus.setImageDrawable(resources.getDrawable(R.drawable.ic_diamond))
+
+                binding.bottomNavLayout.tvTabSchedule.setTextColor(resources.getColor(R.color.unselectedIconColor))
+                binding.bottomNavLayout.tvTabSchedule.setTypeface(
+                    binding.bottomNavLayout.tvTabSchedule.typeface,
+                    Typeface.NORMAL
+                )
+                binding.bottomNavLayout.tvTabSchedule.setTextColor(resources.getColor(R.color.unselectedIconColor))
+//                binding.bottomNavLayout.ivTabPlus.setImageDrawable(resources.getDrawable(R.drawable.ic_diamond))
 
                 binding.bottomNavLayout.tvTabPrices.setTypeface(
                     binding.bottomNavLayout.tvTabPrices.typeface,
@@ -470,6 +628,38 @@ class MainActivity : ParentActivity(), View.OnClickListener {
 
 
             }
+        }
+    }
+
+    fun showBottomNavShimmer() {
+        binding.bottomNavShimmerLayout.bottomnavShimmerRootContainer.makeViewVisible()
+        binding.bottomNavLayout.bottomnavRootContainer.makeViewGone()
+        binding.bottomNavShimmerLayout.shimmerBottomNavSl.startShimmer()
+    }
+
+    fun hideBottomNavShimmer() {
+        binding.bottomNavShimmerLayout.bottomnavShimmerRootContainer.makeViewGone()
+        binding.bottomNavLayout.bottomnavRootContainer.makeViewVisible()
+        binding.bottomNavShimmerLayout.shimmerBottomNavSl.stopShimmer()
+    }
+
+    fun showPlusBottomNav(toBeShown: Boolean) {
+        if (toBeShown) {
+            binding.bottomNavLayout.tvTabPlus.makeViewVisible()
+            binding.bottomNavLayout.ivTabPlus.makeViewVisible()
+        } else {
+            binding.bottomNavLayout.tvTabPlus.makeViewGone()
+            binding.bottomNavLayout.ivTabPlus.makeViewGone()
+        }
+    }
+
+    fun showScheduleBottomNav(toBeShown: Boolean) {
+        if (toBeShown) {
+            binding.bottomNavLayout.tvTabSchedule.makeViewVisible()
+            binding.bottomNavLayout.ivTabSchedule.makeViewVisible()
+        } else {
+            binding.bottomNavLayout.tvTabSchedule.makeViewGone()
+            binding.bottomNavLayout.ivTabSchedule.makeViewGone()
         }
     }
 
@@ -534,24 +724,28 @@ class MainActivity : ParentActivity(), View.OnClickListener {
                 }
                 handleBottomNavTabClicks(binding.bottomNavLayout.ivTabHome)
             }
+
             2 -> {
                 if (isToClearStack) {
                     clearBackStack(2)
                 }
                 handleBottomNavTabClicks(binding.bottomNavLayout.ivTabPlus)
             }
+
             3 -> {
                 if (isToClearStack) {
                     clearBackStack(3)
                 }
                 handleBottomNavTabClicks(binding.bottomNavLayout.ivTabOrder)
             }
+
             4 -> {
                 if (isToClearStack) {
                     clearBackStack(4)
                 }
                 handleBottomNavTabClicks(binding.bottomNavLayout.ivTabPrices)
             }
+
             5 -> {
                 if (isToClearStack) {
                     clearBackStack(5)

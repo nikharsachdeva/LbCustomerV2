@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="isSelected"
+            type="Boolean" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/qtyRoot_rl"
+        isSelected="@{isSelected}"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dimen10dp"
+        android:background="@drawable/bg_item_service_selector">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:background="@drawable/rounded_button_12px"
+            android:backgroundTint="@color/colorLightPurple"
+            android:padding="@dimen/dimen10dp">
+
+            <TextView
+                android:id="@+id/qtyName_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ellipsize="end"
+                android:fontFamily="@font/lexend_regular"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="10-20 Clothes"
+                android:textSize="14sp" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

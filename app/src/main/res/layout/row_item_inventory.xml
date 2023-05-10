@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:padding="5dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/item_inventory_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:fontFamily="@font/lexend_regular"
+        android:text="Nikhar"
+        android:textColor="@color/colorHeading"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/item_inventory_minus"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/minus" />
+
+        <EditText
+            android:id="@+id/item_inventory_qty"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:inputType="number"
+            android:digits="0123456789"
+            android:layout_marginEnd="10dp"
+            android:enabled="false"
+            android:editable="false"
+            android:focusable="false"
+            android:fontFamily="@font/lexend_regular"
+            android:gravity="center_horizontal"
+            android:textColor="@color/colorHeading"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/item_inventory_plus"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/add_2" />
+
+    </LinearLayout>
+</RelativeLayout>

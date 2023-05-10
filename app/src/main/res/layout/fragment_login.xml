@@ -1,11 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorCyan"
     tools:context=".ui.LoginFragment">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_margin="@dimen/dimen20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lexend_bold"
+            android:text="Laundry Buoy"
+            android:textColor="@color/colorHeading"
+            android:textSize="26sp" />
+
+        <TextView
+            android:id="@+id/fadeInOut_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen10dp"
+            android:fontFamily="@font/lexend_medium"
+            android:text="Happy Clothes"
+            android:textColor="@color/colorHeading"
+            android:textSize="20sp" />
+
+        <RelativeLayout
+            android:id="@+id/getStarted_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_30dp"
+            android:background="@drawable/rounded_button_30px"
+            android:backgroundTint="@color/colorCyanHeading"
+            android:padding="@dimen/dimen10dp">
+
+            <TextView
+                android:id="@+id/getStarted_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dimen10dp"
+                android:fontFamily="@font/lexend_regular"
+                android:text="Get Started"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/showRouteIndicator_iv"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="@dimen/dimen10dp"
+                android:layout_toEndOf="@id/getStarted_tv"
+                android:rotation="90"
+                android:visibility="visible"
+                app:lottie_autoPlay="true"
+                app:lottie_colorFilter="@color/white"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/swipe_up"
+                app:lottie_speed="1" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="-10dp"
+        android:scaleType="fitEnd"
+        android:src="@drawable/iron_login" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:rotationY="180"
+        android:scaleType="fitEnd"
+        android:src="@drawable/login_clip" />
+
+    <ImageView
+        android:layout_width="170dp"
+        android:layout_height="125dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:rotationY="180"
+        android:scaleType="fitEnd"
+        android:src="@drawable/clothes_login2"
+        android:visibility="visible" />
 
 </RelativeLayout>

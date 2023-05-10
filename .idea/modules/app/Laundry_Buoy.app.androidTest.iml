@@ -3,6 +3,7 @@
   <component name="FacetManager">
     <facet type="kotlin-language" name="Kotlin">
       <configuration version="5" platform="JVM 1.8" allPlatforms="JVM [1.8]" useProjectSettings="false">
+        <additionalVisibleModuleNames>:app:main</additionalVisibleModuleNames>
         <compilerSettings>
           <option name="additionalArguments" value="-Xallow-no-source-files" />
         </compilerSettings>
@@ -18,6 +19,7 @@
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/8edebd0f8a2f8f3576a832b1dcbada8e/transformed/espresso-core-3.4.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/372029fbd7429c96d110d1120754e852/transformed/databinding-runtime-7.2.2-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/27585eaf4797f70f4984b4ae4f372f2f/transformed/jetified-Android-Image-Cropper-4.3.1-api.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/8ef34a262bc4581dd80225aa6c315d2b/transformed/jetified-balloon-1.4.7-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/9e7486c3121cf9c447770756d77078e7/transformed/jetified-viewbinding-7.2.2-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/b4a909d6575f949e6d4e9d494ee28102/transformed/databinding-adapters-7.2.2-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.databinding/databinding-common/7.2.2/cb53bd625b7a99cf218f46634d07d1886441288/databinding-common-7.2.2.jar</arg>
@@ -57,10 +59,13 @@
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/a0c1d76de0793bbab3a099b8bcbaec97/transformed/lifecycle-extensions-2.2.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/63714e1ee08c7d127ac9d35d3d659587/transformed/jetified-places-3.0.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/3eccbb42c3ea9ac90e6c2e3064614ac2/transformed/jetified-play-services-maps-18.1.0-api.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/7ec2aab4392707bce6fa4c110a482d32/transformed/jetified-play-services-auth-20.1.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/44db65beef8690dbad440afb1431cbbf/transformed/jetified-viewpager2-1.0.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/3d539aae56f8092dde9771ca9ed1a899/transformed/jetified-play-services-location-21.0.1-api.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/162a2144db388c6fdbf02a16efb9581d/transformed/jetified-play-services-auth-api-phone-18.0.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/a2d994743982e7700a8b45199d773b41/transformed/jetified-firebase-messaging-ktx-23.0.7-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/1aa46d52a20fe6bd3ff393d49bb09b0b/transformed/jetified-firebase-messaging-23.0.7-api.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/dfbb4120b805134976c69acd0353e956/transformed/jetified-play-services-auth-base-18.0.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/842e34d2b2e0bc5f5b215baa7a779990/transformed/jetified-play-services-base-18.1.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/f294ef95e23285cc66bbd3212b559c32/transformed/jetified-firebase-analytics-ktx-21.1.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/1fa2d189d2cf07921720ad61f188a8ef/transformed/jetified-firebase-common-ktx-20.1.1-api.jar</arg>
@@ -96,8 +101,8 @@
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/398530646e918b71f913cc6b44f96d63/transformed/legacy-support-core-utils-1.0.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/39b1161531cea63fba998f8af2fee7bd/transformed/jetified-activity-1.3.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/3922a65d4dc86aacc1d3755950e17427/transformed/recyclerview-1.2.0-api.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/transforms-3/d210717bea2a453329b5ad5ea52b714e/transformed/viewpager-1.0.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/effff952e1ff48c962ed602315f48918/transformed/loader-1.0.0-api.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/d210717bea2a453329b5ad5ea52b714e/transformed/viewpager-1.0.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/9a3c394b0eb904e4cad6bc7d26dd0669/transformed/slidingpanelayout-1.0.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/6bf2d05bb3c865f5c6cfc1f6ac098ab7/transformed/customview-1.1.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/6b4330c8a5d820a2e28109a6f6c36e9e/transformed/swiperefreshlayout-1.0.0-api.jar</arg>
@@ -119,7 +124,7 @@
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.arch.core/core-common/2.1.0/b3152fc64428c9354344bd89848ecddc09b6f07e/core-common-2.1.0.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/15892f8ba03ccf9855229fcb90fb12b3/transformed/jetified-lifecycle-livedata-core-ktx-2.3.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/31f586d3a813c598795fed70cca829f0/transformed/lifecycle-livedata-core-2.3.1-api.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.lifecycle/lifecycle-common/2.4.0/1fdb7349701e9cf2f0a69fc10642b6fef6bb3e12/lifecycle-common-2.4.0.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.lifecycle/lifecycle-common/2.5.0/1fdb7349701e9cf2f0a69fc10642b6fef6bb3e12/lifecycle-common-2.5.0.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/1576711507c8ae13670dbc22256d73ba/transformed/jetified-firebase-components-17.0.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/848c9987f2da3bf0321631e8b508c0d1/transformed/room-runtime-2.4.0-alpha03-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.room/room-common/2.4.0-alpha03/cae14e25bc64587b588f8346858273c6484056af/room-common-2.4.0-alpha03.jar</arg>
@@ -162,6 +167,7 @@
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/ec89b89601a885cafa84144d2c11c8a9/transformed/jetified-ScratchView-1.9.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/463f537ac776c8e819137da766987442/transformed/jetified-circleindicator-2.1.6-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/118e9a4c71d162bb770f5bca717001ce/transformed/jetified-flexbox-2.0.1-api.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/28f5a05a0813b317226ad4b85b5c85fa/transformed/jetified-synth-1.0.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/bbb44a25ab4be8144ca8c6d44763b48c/transformed/jetified-annotation-experimental-1.1.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/3574bcac745379a18e1d0956237bc3da/transformed/jetified-disklrucache-4.13.0.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/9f9206a9923efd9d794d12eff2702b58/transformed/jetified-annotations-4.13.0.jar</arg>
@@ -214,21 +220,18 @@
     <facet type="android" name="Android">
       <configuration>
         <option name="SELECTED_BUILD_VARIANT" value="debug" />
-        <option name="ASSEMBLE_TASK_NAME" value="assembleDebug" />
-        <option name="COMPILE_JAVA_TASK_NAME" value="compileDebugSources" />
-        <afterSyncTasks>
-          <task>generateDebugSources</task>
-        </afterSyncTasks>
         <option name="ALLOW_USER_CONFIGURATION" value="false" />
         <option name="MANIFEST_FILE_RELATIVE_PATH" value="/src/main/AndroidManifest.xml" />
         <option name="RES_FOLDER_RELATIVE_PATH" value="/src/main/res" />
-        <option name="RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/../../../app/src/main/res;file://$MODULE_DIR$/../../../app/src/debug/res;file://$MODULE_DIR$/../../../app/build/generated/res/google-services/debug;file://$MODULE_DIR$/../../../app/build/generated/res/rs/debug;file://$MODULE_DIR$/../../../app/build/generated/res/resValues/debug" />
+        <option name="RES_FOLDERS_RELATIVE_PATH" value="" />
         <option name="TEST_RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/../../../app/src/androidTest/res;file://$MODULE_DIR$/../../../app/src/androidTestDebug/res;file://$MODULE_DIR$/../../../app/build/generated/res/rs/androidTest/debug;file://$MODULE_DIR$/../../../app/build/generated/res/resValues/androidTest/debug" />
         <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/src/main/assets" />
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="true">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
+    <output url="file://$MODULE_DIR$/../../../app/build/intermediates/javac/debug/classes" />
+    <output-test url="file://$MODULE_DIR$/../../../app/build/intermediates/javac/debugUnitTest/classes" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../app/build/generated/aidl_source_output_dir/debugAndroidTest/out" />
     <content url="file://$MODULE_DIR$/../../../app/build/generated/ap_generated_sources/debugAndroidTest/out" />
@@ -245,10 +248,19 @@
     <orderEntry type="jdk" jdkName="Android API 32 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="Laundry_Buoy.app.main" scope="TEST" />
+    <orderEntry type="module-library" scope="TEST">
+      <library name="Gradle: kaptGeneratedClasses">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/debugAndroidTest" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
     <orderEntry type="library" scope="TEST" name="Gradle: junit:junit:4.12" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.hamcrest:hamcrest-core:1.3" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.annotation:annotation:1.3.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: androidx.lifecycle:lifecycle-common:2.4.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: androidx.lifecycle:lifecycle-common:2.5.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.code.findbugs:jsr305:3.0.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.squareup:javawriter:2.1.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: javax.inject:javax.inject:1" level="project" />
@@ -404,6 +416,11 @@
     <orderEntry type="library" scope="TEST" name="Gradle: com.android.volley:volley:1.2.1@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.github.CanHub:Android-Image-Cropper:4.3.1@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.github.stfalcon-studio:StfalconImageViewer:v1.0.1@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: club.cred.android:synth:1.0.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.google.android.gms:play-services-auth:20.1.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.google.android.gms:play-services-auth-api-phone:18.0.1@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.google.android.gms:play-services-auth-base:18.0.1@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.github.skydoves:balloon:1.4.7@aar" level="project" />
   </component>
   <component name="TestModuleProperties" production-module="Laundry_Buoy.app.main" />
 </module>

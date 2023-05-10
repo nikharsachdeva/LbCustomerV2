@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="isSelected"
+            type="Boolean" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/emojiRoot_rl"
+        isSelected="@{isSelected}"
+        android:layout_marginEnd="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/emoji_border_selector">
+
+        <ImageView
+            android:id="@+id/emojiIcon_iv"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="2dp"
+            android:padding="@dimen/dimen10dp"
+            android:src="@drawable/rating_1" />
+
+    </RelativeLayout>
+
+</layout>

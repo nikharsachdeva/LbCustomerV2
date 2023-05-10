@@ -2,7 +2,6 @@ package com.laundrybuoy.customer.utils
 
 import okhttp3.Interceptor
 import okhttp3.Response
-import java.lang.Exception
 
 class NetworkConnectionInterceptor() : Interceptor {
 

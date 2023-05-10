@@ -6,9 +6,14 @@
     <color name="black">#000000</color>
     <color name="colorPurplish">#6B6D92</color>
     <color name="colorOrange">#FF7E59</color>
+    <color name="colorOrangeHighlighter">#50FF7E59</color>
     <color name="colorPurple">#8FA1FF</color>
+    <color name="colorPurpleHighlight">#508FA1FF</color>
+    <color name="colorPurpleScratch">#302b66</color>
     <color name="colorPink">#FF81A9</color>
+    <color name="colorBabyPink">#eec7e4</color>
     <color name="colorGreen">#6ECFBD</color>
+    <color name="colorPastelGreen">#4da376</color>
     <color name="bottomNavBg">#070A11</color>
     <color name="unselectedIconColor">#6B6D92</color>
     <color name="colorVoilate">#8E5AFF</color>
@@ -17,6 +22,51 @@
     <color name="secondary">#35291d</color>
     <color name="secondaryLight">#5e3f22</color>
     <color name="colorPlaceholder">#dddddd</color>
+    <color name="colorLightBeige">#fef7f0</color>
+    <color name="colorHeading">#31394C</color>
+    <color name="colorSubHeading">#8d96b5</color>
+    <color name="colorBlueBtn">#3843D0</color>
+    <color name="colorDarkerBlue">#20222e</color>
+    <color name="colorGrey">#ebecee</color>
+    <color name="synth_color">#212426</color>
+    <color name="colorScratchCardReveal">#1b1b1b</color>
+    <color name="colorPartyConfetti">#4b4b52</color>
+
+    <color name="colorActiveIndicator">@color/colorPurple</color>
+    <color name="colorInActiveIndicator">@color/colorPurplish</color>
+    <color name="colorLoginBg">#f4f2eb</color>
+    <color name="lightBg">#f9f9f9</color>
+    <color name="colorGreyHeading">#bbbdc4</color>
+    <color name="colorOngoingHighlight">#5fc5ea</color>
+    <color name="colorLightCream">#50fde0dc</color>
+    <color name="redHighlighterBg">#40EF6969</color>
+    <color name="redMain">#EF6969</color>
+    <color name="colorGreyProfile">#f8fafb</color>
+    <color name="profilePink">#f7def2</color>
+    <color name="profileCyan">#d3fbf8</color>
+    <color name="profileYellow">#fdf5d6</color>
+    <color name="tracker_btm_sheet">#161829</color>
+    <color name="colorHorizontalLine">#1B2233</color>
+    <color name="red">#fc2254</color>
+    <color name="successGreen">#30b856</color>
+    <color name="redBg">#10fc2254</color>
+    <color name="successGreenBg">#1030b856</color>
+    <color name="rewardsBg">#f0f9fe</color>
+    <color name="rewardsMain">#2e6c8d</color>
+    <color name="coinsBg">#fcf0ec</color>
+    <color name="coinsMain">#df5936</color>
+    <color name="subBg">#e9e7fd</color>
+    <color name="subMain">#433e8e</color>
+    <color name="emojiYellow">#fcf1cd</color>
+    <color name="colorCyan">#c6e2df</color>
+    <color name="colorCyanHeading">#143740</color>
+    <color name="colorPinkLogin">#ecb9b9</color>
+    <color name="colorYellowLogin">#e6bb4f</color>
+    <color name="colorYellowHighlight">#10e6bb4f</color>
+    <color name="colorLightPurple">#dcdae4</color>
+    <color name="colorMediumPurple">#6B6D92</color>
+    <color name="colorDarkPurple">#1c1461</color>
+    <color name="whiteShade1">#fbfbfb</color>
 
 
 </resources>

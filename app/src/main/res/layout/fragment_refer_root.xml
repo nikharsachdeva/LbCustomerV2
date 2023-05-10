@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutAnimation="@anim/layout_animation_fade_enter"
+    tools:context=".ui.ReferRootFragment">
+
+    <RelativeLayout
+        android:id="@+id/referHeader_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen20dp">
+
+        <ImageView
+            android:id="@+id/backFromRefer_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow_back_ios_new_24"
+            app:tint="@color/colorMediumPurple" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/lexend_bold"
+            android:text="@string/refer_and_earn"
+            android:textColor="@color/colorMediumPurple"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/referRootTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_below="@id/referHeader_rl"
+        android:layout_marginStart="@dimen/dimen20dp"
+        android:layout_marginEnd="@dimen/dimen20dp"
+        android:clipToPadding="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:tabIndicatorHeight="0dp"
+        app:tabMode="scrollable"
+        app:tabPaddingEnd="10dp"
+        app:tabPaddingStart="10dp"
+        app:tabSelectedTextColor="@color/colorHeading"
+        app:tabTextAppearance="@style/CustomTextAppearanceVendorTab"
+        app:tabTextColor="@color/colorSubHeading" />
+
+    <com.laundrybuoy.customer.utils.DynamicViewPager
+        android:id="@+id/referRootViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/referRootTabLayout"
+        android:layout_margin="@dimen/dimen20dp"
+        android:clipToPadding="false" />
+
+</RelativeLayout>

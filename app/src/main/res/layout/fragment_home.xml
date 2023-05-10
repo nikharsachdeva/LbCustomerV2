@@ -1,15 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clipChildren="false"
     android:fillViewport="true"
+    android:orientation="vertical"
+    android:scrollbars="none"
     tools:context=".ui.HomeFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Home Fragment"/>
+        android:orientation="vertical">
 
-</RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <RelativeLayout
+                android:id="@+id/greetingRoot_rl"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_30dp"
+                android:layout_marginStart="20dp">
+
+                <TextView
+                    android:id="@+id/greeting_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend_light"
+                    android:textColor="@color/colorDarkerBlue"
+                    android:textSize="24sp" />
+
+                <RelativeLayout
+                    android:id="@+id/greetingUnavailable_rl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen10dp"
+                    android:layout_toEndOf="@id/greeting_tv"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:id="@+id/greetingDashed_v"
+                        android:layout_width="100dp"
+                        android:layout_height="2dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/dashed_line" />
+
+                    <ImageView
+                        android:id="@+id/greetingEditIcon_iv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/greetingDashed_v"
+                        android:src="@drawable/ic_baseline_mode_edit_24"
+                        app:tint="@color/colorBlueBtn" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/greetingType_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/greetingRoot_rl"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:fontFamily="@font/lexend_bold"
+                android:text="Welcome back"
+                android:textColor="@color/colorGreyHeading"
+                android:textSize="18sp" />
+
+            <RelativeLayout
+                android:id="@+id/coinHomeRoot_rl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/greetingRoot_rl"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/rounded_button_30px"
+                android:backgroundTint="@color/colorLightCream"
+                android:padding="@dimen/dimen_5dp">
+
+                <ImageView
+                    android:id="@+id/coinHome_iv"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/coin" />
+
+                <TextView
+                    android:id="@+id/coinHome_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/dimen_5dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_toEndOf="@id/coinHome_iv"
+                    android:fontFamily="@font/lexend_medium"
+                    android:textColor="@color/colorDarkerBlue"
+                    android:textSize="10sp" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <!--
+        <androidx.cardview.widget.CardView
+            android:id="@+id/userAddressHome_cv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen20dp"
+            android:layout_marginEnd="@dimen/dimen20dp"
+            android:elevation="2dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="16dp"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="true">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:alpha="0.7"
+                android:scaleType="centerCrop"
+                android:src="@drawable/map_unav" />
+
+            <RelativeLayout
+                android:id="@+id/userAddressUnav_rl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/lexend_medium"
+                    android:text="Set your address now"
+                    android:textColor="@color/colorDarkerBlue"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/dimen20dp"
+                    android:src="@drawable/ic_baseline_add_24"
+                    app:tint="@color/black" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        -->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/homeScreenMain_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/dimen20dp"
+            android:layout_marginEnd="@dimen/dimen20dp"
+            android:layout_marginBottom="@dimen/dimen20dp" />
+
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>

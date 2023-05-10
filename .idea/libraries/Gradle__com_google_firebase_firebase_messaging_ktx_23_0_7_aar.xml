@@ -2,7 +2,6 @@
   <library name="Gradle: com.google.firebase:firebase-messaging-ktx:23.0.7@aar">
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/30fa4d1e090cf6f5c43e6821dcb4ae8f/transformed/jetified-firebase-messaging-ktx-23.0.7/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/30fa4d1e090cf6f5c43e6821dcb4ae8f/transformed/jetified-firebase-messaging-ktx-23.0.7/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/30fa4d1e090cf6f5c43e6821dcb4ae8f/transformed/jetified-firebase-messaging-ktx-23.0.7/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>

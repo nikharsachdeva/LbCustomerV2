@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:elevation="5dp"
+    app:cardBackgroundColor="@color/colorLightBeige"
+    app:cardCornerRadius="12dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/sub_tran_amt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/rounded_button_10px"
+            android:backgroundTint="@color/colorGreyHeading"
+            android:fontFamily="@font/lexend_medium"
+            android:paddingStart="10dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="5dp"
+            android:textColor="@color/colorDarkerBlue"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:id="@+id/subName_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sub_tran_amt"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/lexend_bold"
+            android:textColor="@color/colorDarkerBlue"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/subDesc_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subName_tv"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/lexend_regular"
+            android:textColor="@color/colorHeading"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/subPrice_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subDesc_tv"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/lexend_bold"
+            android:textColor="@color/colorDarkerBlue"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/subValidity_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subPrice_tv"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/lexend_regular"
+            android:textColor="@color/colorHeading"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:id="@+id/startDate_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subValidity_tv"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_button_10px"
+                android:backgroundTint="@color/successGreenBg"
+                android:fontFamily="@font/lexend_regular"
+                android:paddingStart="10dp"
+                android:paddingTop="5dp"
+                android:text="@string/start_date"
+                android:paddingEnd="10dp"
+                android:paddingBottom="5dp"
+                android:textColor="@color/successGreen"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/startDate_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/lexend_regular"
+                android:paddingStart="10dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="5dp"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/endDate_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/startDate_ll"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_button_10px"
+                android:backgroundTint="@color/redBg"
+                android:fontFamily="@font/lexend_regular"
+                android:paddingStart="10dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="10dp"
+                android:text="@string/end_date"
+                android:paddingBottom="5dp"
+                android:textColor="@color/red"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/endDate_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="17dp"
+                android:fontFamily="@font/lexend_regular"
+                android:paddingStart="10dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="5dp"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/sub_tran_closing_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/endDate_ll"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:alpha="0.7"
+            android:fontFamily="@font/lexend_regular"
+            android:textColor="@color/colorHorizontalLine"
+            android:textSize="11sp" />
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

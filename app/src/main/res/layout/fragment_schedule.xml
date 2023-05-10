@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorLightPurple"
+    android:padding="@dimen/dimen20dp"
+    tools:context=".ui.ScheduleFragment">
+
+    <RelativeLayout
+        android:id="@+id/scheduleHeader_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/backFromSchedule_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow_back_ios_new_24"
+            app:tint="@color/colorMediumPurple" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/lexend_bold"
+            android:text="Booking details"
+            android:textColor="@color/colorMediumPurple"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/proceedSchedule_btn"
+        android:layout_below="@id/scheduleHeader_rl"
+        android:layout_marginTop="@dimen/dimen20dp"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/serviceRoot_cv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="2dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="8dp"
+                app:cardPreventCornerOverlap="false"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dimen20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lexend_bold"
+                        android:text="Service"
+                        android:textColor="@color/colorDarkPurple"
+                        android:textSize="16sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/scheduleService_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen10dp"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/row_item_select_service" />
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/addressRoot_cv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/serviceRoot_cv"
+                android:layout_marginTop="@dimen/dimen20dp"
+                android:elevation="2dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="8dp"
+                app:cardPreventCornerOverlap="false"
+                app:cardUseCompatPadding="true">
+
+                <RelativeLayout
+                    android:id="@+id/selectAddress_rl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dimen20dp">
+
+                    <TextView
+                        android:id="@+id/addressHeading_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lexend_bold"
+                        android:text="Address"
+                        android:textColor="@color/colorDarkPurple"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/scheduleAddress_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/addressHeading_tv"
+                        android:layout_marginTop="@dimen/dimen20dp"
+                        android:fontFamily="@font/lexend_medium"
+                        android:text="Select your address"
+                        android:textColor="@color/colorSubHeading"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:id="@+id/scheduleAddress_v"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/scheduleAddress_tv"
+                        android:layout_marginTop="@dimen/dimen10dp"
+                        android:layout_marginEnd="@dimen/dimen10dp"
+                        android:layout_toStartOf="@id/scheduleAddressEdit_iv"
+                        android:background="@color/colorSubHeading" />
+
+                    <ImageView
+                        android:id="@+id/scheduleAddressEdit_iv"
+                        android:layout_width="@dimen/dimen20dp"
+                        android:layout_height="@dimen/dimen20dp"
+                        android:layout_below="@id/scheduleAddress_tv"
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/ic_baseline_mode_edit_24"
+                        app:tint="@color/colorDarkPurple" />
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/pickupDateRoot_cv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/addressRoot_cv"
+                android:layout_marginTop="@dimen/dimen20dp"
+                android:elevation="2dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="8dp"
+                app:cardPreventCornerOverlap="false"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dimen20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lexend_bold"
+                        android:text="Pickup Date"
+                        android:textColor="@color/colorDarkPurple"
+                        android:textSize="16sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/pickupDate_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen10dp"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/row_item_select_date" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pickupDateRoot_cv"
+                android:layout_marginTop="@dimen/dimen20dp"
+                android:layout_marginBottom="@dimen/dimen20dp"
+                android:elevation="2dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="8dp"
+                app:cardPreventCornerOverlap="false"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dimen20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lexend_bold"
+                        android:text="Approx Quantity"
+                        android:textColor="@color/colorDarkPurple"
+                        android:textSize="16sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/scheduleQty_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen10dp"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/row_item_select_service" />
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/proceedSchedule_btn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/rounded_button_8px"
+        android:fontFamily="@font/lexend_medium"
+        android:text="Proceed"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:backgroundTint="@color/colorBlueBtn"
+        app:icon="@drawable/ic_tick_circle"
+        app:iconGravity="textStart" />
+
+</RelativeLayout>

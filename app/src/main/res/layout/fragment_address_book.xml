@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/dimen20dp"
+    tools:context=".ui.AddressBookFragment">
+
+    <RelativeLayout
+        android:id="@+id/addressBook_header_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/backFromAddressBook_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/arrow_back_ios_new_24" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@id/backFromAddressBook_iv"
+            android:fontFamily="@font/lexend_bold"
+            android:text="@string/address_book"
+            android:textColor="@color/colorGreyHeading"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/addressBookRoot_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/addAddressBook_btn"
+        android:layout_below="@id/addressBook_header_rl">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/addressBook_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dimen20dp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/row_item_address_book" />
+
+        <LinearLayout
+            android:id="@+id/addressBookUnAvailable_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:visibility="gone">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/no_data"
+                app:lottie_speed="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_button_4px"
+                android:backgroundTint="#1030b856"
+                android:fontFamily="@font/lexend_regular"
+                android:padding="10dp"
+                android:text="@string/no_address_available"
+                android:textColor="@color/colorDarkerBlue"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/addAddressBook_btn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/dimen20dp"
+        android:background="@drawable/rounded_button_8px"
+        android:fontFamily="@font/lexend_medium"
+        android:text="@string/add_address"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:backgroundTint="@color/colorBlueBtn"
+        app:icon="@drawable/ic_baseline_add_24"
+        app:iconGravity="textStart" />
+
+
+</RelativeLayout>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dimen10dp"
+    android:elevation="2dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="8dp"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <RelativeLayout
+            android:id="@+id/item_ongoing_icon_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000">
+
+            <ImageView
+                android:id="@+id/item_ongoing_icon_iv"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/laundry"
+                app:tint="#324dbb" />
+
+            <ProgressBar
+                android:id="@+id/item_ongoing_progress_pb"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/circular_shape"
+                android:max="100"
+                android:padding="1dp"
+                android:progress="65"
+                android:progressDrawable="@drawable/circular_progressbar" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/item_ongoing_content_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_toStartOf="@id/item_ongoing_status_tv"
+            android:layout_toEndOf="@id/item_ongoing_icon_rl"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/item_ongoing_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend_bold"
+                android:textColor="@color/colorDarkerBlue"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/item_ongoing_date_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/lexend_regular"
+                android:maxLines="1"
+                android:textColor="@color/colorGreyHeading"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/item_ongoing_status_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/rounded_button_30px"
+            android:backgroundTint="#103673e1"
+            android:fontFamily="@font/lexend_regular"
+            android:paddingStart="10dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="5dp"
+            android:text="Ongoing / Waiting"
+            android:textColor="#3673e1"
+            android:textSize="11sp" />
+
+        <View
+            android:id="@+id/item_ongoing_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/item_ongoing_icon_rl"
+            android:layout_marginTop="@dimen/dimen10dp"
+            android:background="@color/colorGreyHeading" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_ongoing_divider"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/idOne_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/circle_bg"
+                        android:backgroundTint="@color/colorGreyHeading"
+                        android:fontFamily="@font/lexend_regular"
+                        android:gravity="center"
+                        android:text="@string/one"
+                        android:textColor="@color/white"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/stageOne_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:fontFamily="@font/lexend_regular"
+                        android:text="@string/ongoing_collected"
+                        android:textColor="@color/colorGreyHeading"
+                        android:textSize="11sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/idTwo_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/circle_bg"
+                        android:backgroundTint="@color/colorGreyHeading"
+                        android:fontFamily="@font/lexend_regular"
+                        android:gravity="center"
+                        android:text="@string/two"
+                        android:textColor="@color/white"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/stageTwo_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:fontFamily="@font/lexend_regular"
+                        android:text="@string/ongoing_service"
+                        android:textColor="@color/colorGreyHeading"
+                        android:textSize="11sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/idThree_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/circle_bg"
+                        android:backgroundTint="@color/colorGreyHeading"
+                        android:fontFamily="@font/lexend_regular"
+                        android:gravity="center"
+                        android:text="@string/three"
+                        android:textColor="@color/white"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/stageThree_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:fontFamily="@font/lexend_regular"
+                        android:text="@string/ongoing_packed"
+                        android:textColor="@color/colorGreyHeading"
+                        android:textSize="11sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/idFour_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/circle_bg"
+                        android:backgroundTint="@color/colorGreyHeading"
+                        android:fontFamily="@font/lexend_regular"
+                        android:gravity="center"
+                        android:text="@string/four"
+                        android:textColor="@color/white"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/stageFour_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:fontFamily="@font/lexend_regular"
+                        android:text="@string/ongoing_delivery"
+                        android:textColor="@color/colorGreyHeading"
+                        android:textSize="11sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

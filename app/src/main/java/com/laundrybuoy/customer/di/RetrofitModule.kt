@@ -4,6 +4,7 @@ import com.laundrybuoy.customer.BuildConfig
 import com.laundrybuoy.customer.retrofit.CustomerAPI
 import com.laundrybuoy.customer.utils.Constants.BASE_URL
 import com.laundrybuoy.customer.utils.NetworkConnectionInterceptor
+import com.laundrybuoy.customer.utils.SharedPreferenceManager
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -46,7 +47,9 @@ class RetrofitModule {
             it.proceed(
                 it.request().newBuilder()
                     .addHeader(
-                        "role", "user"
+                        "role", "customer"
+                    ).addHeader(
+                        "Authorization", "Bearer ${SharedPreferenceManager.getBearerToken()}"
                     )
                     .build()
             )

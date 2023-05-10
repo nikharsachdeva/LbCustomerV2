@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    tools:context=".ui.ReferInviteFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/referBasic_cv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:elevation="4dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/refer_gradient"
+                android:orientation="vertical"
+                android:padding="@dimen/dimen_15">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/lexend_bold"
+                    android:text="Refer friends and earn laundry credits."
+                    android:textColor="@color/subMain"
+                    android:textSize="18sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen20dp">
+
+                    <ImageView
+                        android:id="@+id/pointOneIv"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/diamond_icon" />
+
+                    <TextView
+                        android:id="@+id/pointOneTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen20dp"
+                        android:layout_toEndOf="@id/pointOneIv"
+                        android:fontFamily="@font/lexend_regular"
+                        android:text="Your Friend successfully signs up."
+                        android:textColor="@color/colorDarkerBlue"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen20dp">
+
+                    <ImageView
+                        android:id="@+id/pointTwoIv"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/diamond_icon" />
+
+                    <TextView
+                        android:id="@+id/pointTwoTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen20dp"
+                        android:layout_toEndOf="@id/pointTwoIv"
+                        android:fontFamily="@font/lexend_regular"
+                        android:text="Your Friend completes first order."
+                        android:textColor="@color/colorDarkerBlue"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen20dp"
+                    android:layout_marginBottom="60dp">
+
+                    <ImageView
+                        android:id="@+id/pointThreeIv"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/diamond_icon" />
+
+                    <TextView
+                        android:id="@+id/pointThreeTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen20dp"
+                        android:layout_toEndOf="@id/pointThreeIv"
+                        android:fontFamily="@font/lexend_regular"
+                        android:text="You get rewarded with Laundry credits."
+                        android:textColor="@color/colorDarkerBlue"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/referOptions_cv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/referBasic_cv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/dimen20dp"
+            android:layout_marginTop="-50dp"
+            android:layout_marginEnd="@dimen/dimen20dp"
+            android:elevation="4dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/refer_button_grad"
+                android:orientation="horizontal"
+                android:padding="@dimen/dimen_15">
+
+                <TextView
+                    android:id="@+id/iReferNow_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/lexend_bold"
+                    android:text="@string/i_refer_now"
+                    android:textColor="@color/white"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/referSubHead_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iReferNow_tv"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dimen_5dp"
+                    android:fontFamily="@font/lexend_regular"
+                    android:gravity="center_horizontal"
+                    android:text="@string/refer_sub_head"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/referSubHead_tv"
+                    android:layout_marginStart="@dimen/dimen20dp"
+                    android:layout_marginTop="@dimen/dimen20dp"
+                    android:layout_marginEnd="@dimen/dimen20dp"
+                    android:background="@drawable/rounded_button_8px"
+                    android:backgroundTint="@color/white"
+                    android:padding="@dimen/dimen10dp">
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/referWhatsapp_iv"
+                                android:layout_width="@dimen/dimen_30dp"
+                                android:layout_height="@dimen/dimen_30dp"
+                                android:layout_marginEnd="@dimen/dimen20dp"
+                                android:src="@drawable/whatsapp" />
+
+                            <ImageView
+                                android:id="@+id/referSms_iv"
+                                android:layout_width="@dimen/dimen_30dp"
+                                android:layout_height="@dimen/dimen_30dp"
+                                android:layout_marginEnd="@dimen/dimen20dp"
+                                android:src="@drawable/sms" />
+
+                            <ImageView
+                                android:id="@+id/referGmail_iv"
+                                android:layout_width="@dimen/dimen_30dp"
+                                android:layout_height="@dimen/dimen_30dp"
+                                android:layout_marginEnd="@dimen/dimen20dp"
+                                android:src="@drawable/gmail" />
+
+                            <ImageView
+                                android:id="@+id/referOther_iv"
+                                android:layout_width="@dimen/dimen_30dp"
+                                android:layout_height="@dimen/dimen_30dp"
+                                android:layout_marginEnd="@dimen/dimen10dp"
+                                android:src="@drawable/ellipsis" />
+
+                        </LinearLayout>
+
+                    </HorizontalScrollView>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/referFriends_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/referOptions_cv"
+            android:layout_marginStart="@dimen/dimen20dp"
+            android:layout_marginTop="@dimen/dimen20dp"
+            android:layout_marginEnd="@dimen/dimen20dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/row_item_refer_friends" />
+
+    </RelativeLayout>
+
+
+</ScrollView>

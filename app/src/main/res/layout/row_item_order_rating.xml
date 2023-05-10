@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/orderRatingRoot_rl"
+    android:layout_marginEnd="@dimen/dimen_15">
+
+    <TextView
+        android:id="@+id/orderRatingUnavailable_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button_4px"
+        android:backgroundTint="@color/colorOrangeHighlighter"
+        android:fontFamily="@font/lexend_regular"
+        android:padding="@dimen/dimen10dp"
+        android:text="You haven't rated the pickup"
+        android:textColor="@color/colorOrange"
+        android:textSize="11sp"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/orderRatingAvailable_rl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen10dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/orderRatingFor_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lexend_medium"
+            android:text="Pickup Rating :"
+            android:textColor="@color/colorHeading"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/orderRatingValue_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@id/orderRatingFor_tv"
+            android:fontFamily="@font/lexend_medium"
+            android:text="5"
+            android:textColor="@color/colorHeading"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/orderRatingStar_iv"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@id/orderRatingValue_tv"
+            android:src="@drawable/star" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="@dimen/dimen20dp"
+            android:layout_marginStart="@dimen/dimen20dp"
+            android:layout_toEndOf="@id/orderRatingStar_iv"
+            android:background="@color/colorSubHeading" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

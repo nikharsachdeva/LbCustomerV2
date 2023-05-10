@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/dimen20dp"
+    tools:context=".ui.MyCoinsFragment">
+
+    <RelativeLayout
+        android:id="@+id/coin_header_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/backFromMyCoins_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow_back_ios_new_24" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@id/backFromMyCoins_iv"
+            android:fontFamily="@font/lexend_bold"
+            android:text="@string/my_coins"
+            android:textColor="@color/colorGreyHeading"
+            android:textSize="20sp" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/coins_heading_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/coin_header_rl"
+        android:layout_marginTop="@dimen/dimen20dp"
+        android:background="@drawable/rounded_button_4px"
+        android:backgroundTint="@color/colorLightBeige"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:visibility="gone">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_horizontal"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/coin_spread"
+            app:lottie_speed="1" />
+
+        <TextView
+            android:id="@+id/currentBal_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/lexend_bold"
+            android:textColor="@color/colorDarkerBlue"
+            android:textSize="40sp" />
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/coins_heading_ll"
+        android:layout_marginTop="20dp">
+
+        <RelativeLayout
+            android:id="@+id/coinsAvailable_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_button_4px"
+            android:backgroundTint="@color/lightBg"
+            android:padding="10dp"
+            android:visibility="gone">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/customerCoins_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/coinsUnAvailable_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:visibility="gone">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/no_data"
+                app:lottie_speed="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_button_4px"
+                android:backgroundTint="#1030b856"
+                android:fontFamily="@font/lexend_regular"
+                android:padding="10dp"
+                android:text="@string/no_details_available"
+                android:textColor="@color/colorDarkerBlue"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/myCoinShimmer_sv"
+        layout="@layout/shimmer_transaction"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/coin_header_rl"
+        android:layout_marginTop="@dimen/dimen20dp" />
+
+</RelativeLayout>

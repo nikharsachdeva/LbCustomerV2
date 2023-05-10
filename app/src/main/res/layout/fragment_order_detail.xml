@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ui.OrderDetailFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/orderDetailHeader_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen20dp">
+
+            <ImageView
+                android:id="@+id/backFromOrderDetail_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:rotation="270"
+                android:src="@drawable/arrow_back_ios_new_24"
+                app:tint="@color/colorSubHeading" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen20dp"
+                android:layout_marginEnd="@dimen/dimen20dp"
+                android:layout_toStartOf="@id/orderSupport_tv"
+                android:layout_toEndOf="@id/backFromOrderDetail_iv"
+                android:fontFamily="@font/lexend_bold"
+                android:text="@string/order_details"
+                android:textAlignment="center"
+                android:textColor="@color/colorSubHeading"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/orderSupport_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/lexend_regular"
+                android:text="@string/support"
+                android:textColor="@color/colorDarkerBlue"
+                android:textSize="12sp"
+                app:drawableStartCompat="@drawable/baseline_contact_support_24"
+                app:drawableTint="@color/redMain" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/orderStatusRoot_rl"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_below="@id/orderDetailHeader_rl"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="-100dp"
+            android:background="@drawable/semi_circle_white_bg"
+            android:backgroundTint="@color/colorLightBeige">
+
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:orientation="vertical">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/orderStatus_lv"
+                    android:layout_width="match_parent"
+                    android:layout_height="125dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/dimen20dp"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/order_inprogress"
+                    app:lottie_speed="1" />
+
+                <TextView
+                    android:id="@+id/orderStatus_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_30dp"
+                    android:fontFamily="@font/lexend_medium"
+                    android:text="Washing"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorDarkerBlue"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/orderDetailBasic_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/orderDetailHeader_rl"
+            android:layout_marginStart="@dimen/dimen20dp"
+            android:layout_marginTop="@dimen/dimen_30dp"
+            android:layout_marginEnd="-20dp"
+            android:layout_toStartOf="@id/orderStatusRoot_rl"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/dimen_5dp"
+                android:fontFamily="@font/lexend_regular"
+                android:gravity="center"
+                android:text="@string/order_number"
+                android:textColor="@color/colorGreyHeading"
+                android:textSize="12sp"
+                app:drawableStartCompat="@drawable/baseline_numbers_24"
+                app:drawableTint="@color/colorGreyHeading" />
+
+            <TextView
+                android:id="@+id/orderNumber_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend_regular"
+                android:textColor="@color/colorDarkerBlue"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:drawablePadding="@dimen/dimen_5dp"
+                android:fontFamily="@font/lexend_regular"
+                android:gravity="center"
+                android:text="@string/order_date"
+                android:textColor="@color/colorGreyHeading"
+                android:textSize="12sp"
+                app:drawableStartCompat="@drawable/baseline_access_time_24"
+                app:drawableTint="@color/colorGreyHeading" />
+
+            <TextView
+                android:id="@+id/orderDateTime_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend_regular"
+                android:textColor="@color/colorDarkerBlue"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:drawablePadding="@dimen/dimen_5dp"
+                android:fontFamily="@font/lexend_regular"
+                android:gravity="center"
+                android:text="@string/address"
+                android:textColor="@color/colorGreyHeading"
+                android:textSize="12sp"
+                app:drawableStartCompat="@drawable/baseline_location_on_16"
+                app:drawableTint="@color/colorGreyHeading" />
+
+            <TextView
+                android:id="@+id/orderAddress_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend_regular"
+                android:textColor="@color/colorDarkerBlue"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:drawablePadding="@dimen/dimen_5dp"
+                android:fontFamily="@font/lexend_regular"
+                android:gravity="center"
+                android:text="@string/service_requested"
+                android:textColor="@color/colorGreyHeading"
+                android:textSize="12sp"
+                app:drawableStartCompat="@drawable/baseline_local_laundry_service_24"
+                app:drawableTint="@color/colorGreyHeading" />
+
+            <TextView
+                android:id="@+id/orderService_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend_regular"
+                android:textColor="@color/colorDarkerBlue"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/billDetailsRoot_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/orderStatusRoot_rl"
+            android:padding="@dimen/dimen20dp">
+
+            <RelativeLayout
+                android:id="@+id/billDetailAvailable_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/billItemHeading_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend_medium"
+                    android:textColor="@color/colorDarkerBlue"
+                    android:textSize="16sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/billItems_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/billItemHeading_tv"
+                    android:layout_marginTop="@dimen/dimen10dp"
+                    android:orientation="vertical"
+                    android:visibility="visible"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/row_item_order_items" />
+
+                <TextView
+                    android:id="@+id/billDetailHeading_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/billItems_rv"
+                    android:layout_marginTop="@dimen/dimen20dp"
+                    android:fontFamily="@font/lexend_medium"
+                    android:text="@string/bill_details"
+                    android:textColor="@color/colorDarkerBlue"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/billDetailHeading_tv"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:fontFamily="@font/lexend_regular"
+                            android:text="@string/total_items"
+                            android:textColor="@color/colorSubHeading"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/totalItems_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:fontFamily="@font/lexend_regular"
+                            android:text="0"
+                            android:textColor="@color/colorHeading"
+                            android:textSize="12sp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:fontFamily="@font/lexend_regular"
+                            android:text="@string/total_cost"
+                            android:textColor="@color/colorSubHeading"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/totalCost_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:fontFamily="@font/lexend_regular"
+                            android:text="0"
+                            android:textColor="@color/colorHeading"
+                            android:textSize="12sp" />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:id="@+id/orderInfoDotted_v1"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:layout_marginTop="@dimen/dimen10dp"
+                        android:background="@drawable/dashed_line"
+                        android:backgroundTint="@color/colorPlaceholder" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:fontFamily="@font/lexend_regular"
+                            android:text="@string/subscription_balance_used"
+                            android:textColor="@color/colorSubHeading"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/subscriptionUsed_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:fontFamily="@font/lexend_regular"
+                            android:text="0"
+                            android:textColor="@color/colorHeading"
+                            android:textSize="12sp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:fontFamily="@font/lexend_regular"
+                            android:text="Coins"
+                            android:textColor="@color/colorSubHeading"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/coinsUsed_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:fontFamily="@font/lexend_regular"
+                            android:text="0"
+                            android:textColor="@color/colorHeading"
+                            android:textSize="12sp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:fontFamily="@font/lexend_regular"
+                            android:text="Coupon"
+                            android:textColor="@color/colorSubHeading"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/couponUsed_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:fontFamily="@font/lexend_regular"
+                            android:text="0"
+                            android:textColor="@color/colorHeading"
+                            android:textSize="12sp" />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:id="@+id/orderInfoDotted_v2"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:layout_marginTop="@dimen/dimen10dp"
+                        android:background="@drawable/dashed_line"
+                        android:backgroundTint="@color/colorPlaceholder" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:fontFamily="@font/lexend_regular"
+                            android:text="Delivery"
+                            android:textColor="@color/colorSubHeading"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/deliveryCharges_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:fontFamily="@font/lexend_regular"
+                            android:text="0"
+                            android:textColor="@color/colorHeading"
+                            android:textSize="12sp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:fontFamily="@font/lexend_regular"
+                            android:text="Net Total"
+                            android:textColor="@color/colorSubHeading"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/netTotal_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:fontFamily="@font/lexend_regular"
+                            android:text="0"
+                            android:textColor="@color/colorHeading"
+                            android:textSize="12sp" />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/billDetailUnAvailable_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:visibility="gone">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center_horizontal"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/no_data"
+                    app:lottie_speed="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rounded_button_4px"
+                    android:backgroundTint="#1030b856"
+                    android:fontFamily="@font/lexend_regular"
+                    android:padding="10dp"
+                    android:text="@string/bill_hasn_t_been_generated_yet"
+                    android:textColor="@color/colorDarkerBlue"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</androidx.core.widget.NestedScrollView>

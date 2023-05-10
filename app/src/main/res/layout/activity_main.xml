@@ -15,16 +15,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:animateLayoutChanges="true"
-        android:background="@color/white"
         tools:context=".MainActivity">
 
         <RelativeLayout
             android:id="@+id/rlFragmentContainers"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@id/bottomNavLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/bottomNavLayout"
             app:layout_constraintTop_toTopOf="parent">
 
             <RelativeLayout
@@ -62,6 +61,15 @@
         <include
             android:id="@+id/bottomNavLayout"
             layout="@layout/home_bottomnav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <include
+            android:id="@+id/bottomNavShimmerLayout"
+            layout="@layout/home_bottomnav_shimmer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"

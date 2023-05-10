@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutAnimation="@anim/layout_animation_fade_enter"
+    tools:context=".ui.ScratchCardFragment">
+
+    <RelativeLayout
+        android:id="@+id/scratchCardHeader_rl"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/colorDarkerBlue">
+
+        <ImageView
+            android:id="@+id/backFromScratch_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen20dp"
+            android:layout_marginTop="@dimen/dimen20dp"
+            android:layout_marginEnd="@dimen/dimen20dp"
+            android:layout_marginBottom="@dimen/dimen20dp"
+            android:src="@drawable/arrow_back_ios_new_24"
+            app:tint="@color/white" />
+
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/dimen20dp"
+            android:layout_marginBottom="@dimen/dimen20dp">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/coinFallingAnim_lv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:lottie_autoPlay="true"
+                app:lottie_rawRes="@raw/coin_falling" />
+
+            <TextView
+                android:id="@+id/totalRewardValue_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/totalRewardHeading_tv"
+                android:fontFamily="@font/lexend_bold"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/totalRewardHeading_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:fontFamily="@font/lexend_regular"
+                android:text="Total Rewards"
+                android:textColor="@color/colorGreyHeading"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/giftBoxSlidingAnim_lv"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom|right"
+            android:layout_marginEnd="-20dp"
+            android:layout_marginBottom="-50dp"
+            android:scaleType="fitEnd"
+            app:lottie_autoPlay="true"
+            app:lottie_rawRes="@raw/gifts_sliding" />
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/userScratchCards_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/scratchCardHeader_rl"
+        android:layout_margin="@dimen/dimen20dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+        tools:listitem="@layout/row_item_scratch_card" />
+
+    <LinearLayout
+        android:id="@+id/scratchUnAvailable_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:visibility="gone">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/no_data"
+            app:lottie_speed="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_button_4px"
+            android:backgroundTint="#1030b856"
+            android:fontFamily="@font/lexend_regular"
+            android:padding="10dp"
+            android:text="@string/no_rewards_earned"
+            android:textColor="@color/colorDarkerBlue"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/myScratchShimmer_sv"
+        layout="@layout/shimmer_transaction"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dimen20dp" />
+
+</RelativeLayout>

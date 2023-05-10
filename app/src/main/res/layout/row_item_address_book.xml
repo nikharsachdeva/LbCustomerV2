@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dimen10dp">
+
+    <ImageView
+        android:id="@+id/item_address_type_icon"
+        android:layout_width="@dimen/dimen_24dp"
+        android:layout_height="@dimen/dimen_24dp"
+        android:src="@drawable/ic_home" />
+
+    <LinearLayout
+        android:id="@+id/item_address_info_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen20dp"
+        android:layout_toEndOf="@id/item_address_type_icon"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/item_address_type_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lexend_medium"
+            android:text="Home"
+            android:textColor="@color/colorDarkerBlue"
+            android:textSize="15sp" />
+
+
+        <TextView
+            android:id="@+id/item_full_address_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen10dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/lexend_regular"
+            android:maxLines="3"
+            android:text="@string/lorem_ipsum"
+            android:textColor="@color/colorPartyConfetti"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/item_address_phone_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen10dp"
+            android:fontFamily="@font/lexend_regular"
+            android:text="Phone Number : 8899008910"
+            android:textColor="@color/colorPartyConfetti"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/item_address_edit_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend_bold"
+                android:text="@string/edit"
+                android:textColor="@color/redMain"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/item_address_delete_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:fontFamily="@font/lexend_bold"
+                android:text="@string/delete"
+                android:textColor="@color/redMain"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/item_address_default_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:fontFamily="@font/lexend_bold"
+                android:text="@string/mark_default"
+                android:textColor="@color/redMain"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/defaultRoot_rl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/rounded_button_30px"
+        android:backgroundTint="@color/colorOrange"
+        android:padding="@dimen/dimen_5dp">
+
+        <TextView
+            android:id="@+id/coinHome_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Default"
+            android:layout_marginStart="@dimen/dimen_5dp"
+            android:layout_marginEnd="@dimen/dimen_5dp"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/lexend_medium"
+            android:textColor="@color/white"
+            android:textSize="10sp" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/item_address_info_ll"
+        android:layout_margin="@dimen/dimen20dp"
+        android:background="@color/colorGreyHeading" />
+
+</RelativeLayout>

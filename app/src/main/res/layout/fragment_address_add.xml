@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/addAddressRoot_rl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/dimen20dp"
+    tools:context=".ui.AddressAddFragment">
+
+    <ImageView
+        android:id="@+id/backFromAddAddress_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_baseline_close_24"
+        app:tint="@color/black" />
+
+    <RelativeLayout
+        android:id="@+id/locationSearch_rl"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/backFromAddAddress_iv"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_button_8px"
+        android:backgroundTint="@color/colorLightCream"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/searchIconHelp_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_search_iocn"
+            app:tint="@color/colorDarkerBlue" />
+
+        <EditText
+            android:id="@+id/locationSearch_et"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_toEndOf="@id/searchIconHelp_iv"
+            android:background="@null"
+            android:clickable="true"
+            android:cursorVisible="true"
+            android:fontFamily="@font/lexend_light"
+            android:hint="@string/search_location_here"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColor="@color/colorDarkerBlue"
+            android:textColorHint="@color/colorGreyHeading"
+            android:textSize="16sp" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/orAddress_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/locationSearch_rl"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimen10dp"
+        android:fontFamily="@font/lexend_medium"
+        android:text="@string/or"
+        android:textColor="@color/colorHeading" />
+
+    <RelativeLayout
+        android:id="@+id/locateMeRoot_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/orAddress_tv"
+        android:layout_marginTop="@dimen/dimen10dp">
+
+        <RelativeLayout
+            android:id="@+id/locateMeBig_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/rounded_button_8px"
+            android:backgroundTint="@color/redHighlighterBg"
+            android:padding="@dimen/dimen10dp">
+
+            <ImageView
+                android:id="@+id/locateMeIcon_iv"
+                android:layout_width="@dimen/dimen20dp"
+                android:layout_height="@dimen/dimen20dp"
+                android:background="@drawable/rounded_button_8px"
+                android:backgroundTint="@color/redMain"
+                android:padding="@dimen/dimen_5dp"
+                android:src="@drawable/ic_baseline_gps_fixed_24" />
+
+            <TextView
+                android:id="@+id/locateMeTitle_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/dimen10dp"
+                android:layout_marginEnd="@dimen/dimen10dp"
+                android:layout_toEndOf="@id/locateMeIcon_iv"
+                android:fontFamily="@font/lexend_regular"
+                android:text="@string/locate_me"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/locationFields_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/addAddress_btn"
+        android:layout_below="@id/locateMeRoot_rl"
+        android:layout_marginTop="20dp"
+        android:scrollbars="none"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:id="@+id/addAddressChild_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/addressAutomatic_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen20dp"
+                android:layout_toStartOf="@id/locateMeSmall_ll">
+
+                <ImageView
+                    android:id="@+id/addressPinIcon_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_5dp"
+                    android:layout_marginEnd="@dimen/dimen10dp"
+                    android:src="@drawable/ic_baseline_location_on_24"
+                    app:tint="@color/colorGreyHeading" />
+
+                <TextView
+                    android:id="@+id/geocodeAddressLine1_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/addressPinIcon_iv"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/lexend_bold"
+                    android:maxLines="1"
+                    android:textColor="@color/colorGreyHeading"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/geocodeAddressLine2_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/geocodeAddressLine1_tv"
+                    android:layout_toEndOf="@id/addressPinIcon_iv"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/lexend_regular"
+                    android:maxLines="2"
+                    android:textColor="@color/colorDarkerBlue"
+                    android:textSize="12sp" />
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/addressShimmer_sl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:shimmer_auto_start="false">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:background="@drawable/rounded_button_8px"
+                        android:backgroundTint="@color/colorPlaceholder" />
+
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/locateMeSmall_ll"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/rounded_button_8px"
+                android:backgroundTint="@color/redMain"
+                android:padding="@dimen/dimen_5dp"
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_width="@dimen/dimen20dp"
+                    android:layout_height="@dimen/dimen20dp"
+                    android:src="@drawable/ic_baseline_gps_fixed_24" />
+
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/addressMapCvRoot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/addressAutomatic_rl"
+                android:layout_marginTop="@dimen/dimen20dp"
+                android:elevation="5dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="8dp">
+
+                <RelativeLayout
+                    android:id="@+id/addressMapRlRoot"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:nestedScrollingEnabled="true">
+
+                    <fragment
+                        android:id="@+id/addressMapFragment"
+                        class="com.google.android.gms.maps.SupportMapFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <ImageView
+                        android:id="@+id/addressMapMarker"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_baseline_location_on_24"
+                        android:visibility="gone"
+                        app:tint="@color/colorPurple" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/address_til"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/addressMapCvRoot"
+                android:layout_marginTop="20dp"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="4dp"
+                app:boxCornerRadiusBottomStart="4dp"
+                app:boxCornerRadiusTopEnd="4dp"
+                app:boxCornerRadiusTopStart="4dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/addressLine1_tiet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="House / Flat / Floor No."
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/landmark_til"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/address_til"
+                android:layout_marginTop="20dp"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="4dp"
+                app:boxCornerRadiusBottomStart="4dp"
+                app:boxCornerRadiusTopEnd="4dp"
+                app:boxCornerRadiusTopStart="4dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/addressLine2_tiet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Apartment / Society"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/city_til"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/landmark_til"
+                android:layout_marginTop="20dp"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="4dp"
+                app:boxCornerRadiusBottomStart="4dp"
+                app:boxCornerRadiusTopEnd="4dp"
+                app:boxCornerRadiusTopStart="4dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/addressLine3_tiet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Directions to reach (optional)"
+                    android:imeOptions="actionNext"
+                    android:inputType="textMultiLine"
+                    android:lines="3"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/mobileLlRoot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/city_til"
+                android:layout_marginTop="@dimen/dimen20dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/mobile_til"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusBottomEnd="4dp"
+                    app:boxCornerRadiusBottomStart="4dp"
+                    app:boxCornerRadiusTopEnd="4dp"
+                    app:boxCornerRadiusTopStart="4dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/mobile_tiet"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="0123456789"
+                        android:hint="Mobile"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:textSize="14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/addressType_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mobileLlRoot"
+                android:layout_marginTop="@dimen/dimen20dp"
+                android:layout_marginBottom="40dp" />
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/locationSearch_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/locationSearch_rl"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/row_item_location_search" />
+
+    <LinearLayout
+        android:id="@+id/locationUnAvailable_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:visibility="gone">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/no_data"
+            app:lottie_speed="1" />
+
+        <TextView
+            android:id="@+id/locationUnavHeading_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_button_4px"
+            android:backgroundTint="#1030b856"
+            android:fontFamily="@font/lexend_regular"
+            android:padding="10dp"
+            android:text="@string/no_address_available"
+            android:textColor="@color/colorDarkerBlue"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/addAddress_btn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/dimen20dp"
+        android:layout_marginEnd="@dimen/dimen20dp"
+        android:background="@drawable/rounded_button_30px"
+        android:fontFamily="@font/lexend_medium"
+        android:text="@string/add_address"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:backgroundTint="@color/colorBlueBtn"
+        app:icon="@drawable/ic_baseline_add_24"
+        app:iconGravity="textStart"
+        app:iconSize="18dp" />
+
+</RelativeLayout>

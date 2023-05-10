@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_bottom_sheet_round"
+    android:backgroundTint="@color/white"
+    android:padding="@dimen/dimen20dp"
+    tools:context=".ui.GeneralInfoFragment">
+
+    <ImageView
+        android:id="@+id/closeInfoFrag_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_baseline_close_24"
+        app:tint="@color/black" />
+
+    <TextView
+        android:id="@+id/infoHeading_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/closeInfoFrag_iv"
+        android:layout_marginTop="@dimen/dimen20dp"
+        android:fontFamily="@font/lexend_medium"
+        android:gravity="center_horizontal"
+        android:text="@string/enter_otp"
+        android:textColor="@color/black"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/infoSubHeading_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/infoHeading_tv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimen_15"
+        android:fontFamily="@font/lexend_medium"
+        android:text="@string/lorem_ipsum"
+        android:textColor="@color/synth_color"
+        android:textSize="14sp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/infoOkay_btn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/infoSubHeading_tv"
+        android:layout_marginStart="@dimen/dimen10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="@dimen/dimen10dp"
+        android:background="@drawable/rounded_button_8px"
+        android:fontFamily="@font/lexend_medium"
+        android:text="@string/okay"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:backgroundTint="@color/colorBlueBtn"
+        app:icon="@drawable/ic_tick_circle"
+        app:iconGravity="textStart"
+        app:iconTint="@color/white" />
+
+
+</RelativeLayout>

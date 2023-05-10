@@ -2,7 +2,6 @@
   <library name="Gradle: com.google.android.gms:play-services-measurement-sdk-api:21.1.0@aar">
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/f19090220477c5d1620d6c0ef79d83a3/transformed/jetified-play-services-measurement-sdk-api-21.1.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f19090220477c5d1620d6c0ef79d83a3/transformed/jetified-play-services-measurement-sdk-api-21.1.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f19090220477c5d1620d6c0ef79d83a3/transformed/jetified-play-services-measurement-sdk-api-21.1.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>

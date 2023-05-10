@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/bottomnav_root_container"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:background="@android:color/transparent"
+    android:layout_height="wrap_content"
+    android:visibility="gone">
 
     <ImageView
         android:id="@+id/bottomnav_highlighter_iv"
@@ -43,12 +45,31 @@
                 android:src="@drawable/ic_order"
                 app:tint="@color/colorPurplish" />
 
-            <ImageView
+            <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/ivTabPlus"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
-                android:src="@drawable/ic_home" />
+                android:scaleX="1.25"
+                android:scaleY="1.25"
+                android:visibility="gone"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/diamond"
+                app:lottie_speed="2" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/ivTabSchedule"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:scaleX="1.25"
+                android:scaleY="1.25"
+                android:visibility="gone"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/washing_machine"
+                app:lottie_speed="2" />
 
             <ImageView
                 android:id="@+id/ivTabPrices"
@@ -79,10 +100,10 @@
             <TextView
                 android:id="@+id/tvTabHome"
                 android:layout_width="0dp"
-                android:gravity="center_horizontal"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/lexend_regular"
+                android:gravity="center_horizontal"
                 android:text="Home"
                 android:textAlignment="center"
                 android:textColor="@color/colorPurplish"
@@ -91,10 +112,10 @@
             <TextView
                 android:id="@+id/tvTabOrder"
                 android:layout_width="0dp"
-                android:gravity="center_horizontal"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/lexend_regular"
+                android:gravity="center_horizontal"
                 android:text="Orders"
                 android:textAlignment="center"
                 android:textColor="@color/colorPurplish"
@@ -106,11 +127,25 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/lexend_regular"
-                android:text="LB+"
                 android:gravity="center_horizontal"
+                android:text="LB+"
                 android:textAlignment="center"
                 android:textColor="@color/colorPurplish"
-                android:textSize="13sp" />
+                android:textSize="13sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tvTabSchedule"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/lexend_regular"
+                android:gravity="center_horizontal"
+                android:text="Schedule"
+                android:textAlignment="center"
+                android:textColor="@color/colorPurplish"
+                android:textSize="13sp"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/tvTabPrices"
@@ -118,8 +153,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/lexend_regular"
-                android:text="Prices"
                 android:gravity="center_horizontal"
+                android:text="Prices"
                 android:textAlignment="center"
                 android:textColor="@color/colorPurplish"
                 android:textSize="13sp" />
@@ -129,8 +164,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
                 android:fontFamily="@font/lexend_regular"
+                android:gravity="center_horizontal"
                 android:text="Account"
                 android:textAlignment="center"
                 android:textColor="@color/colorPurplish"
@@ -140,6 +175,5 @@
         </LinearLayout>
 
     </LinearLayout>
-
 
 </RelativeLayout>

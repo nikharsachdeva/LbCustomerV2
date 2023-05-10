@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.quick.QuickCouponFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/quickCouponNested_sv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/backFromQCoupon_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/arrow_back_ios_new_24"
+                app:tint="@color/black" />
+
+            <RelativeLayout
+                android:id="@+id/couponSearch_rl"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@id/backFromQCoupon_iv"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_button_8px"
+                android:backgroundTint="@color/colorLightCream"
+                android:gravity="center_vertical"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/couponIconHelp_iv"
+                    android:layout_width="@dimen/dimen20dp"
+                    android:layout_height="@dimen/dimen20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/discount"
+                    app:tint="@color/colorDarkerBlue" />
+
+                <EditText
+                    android:id="@+id/couponSearch_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_toStartOf="@id/applyCoupon_rl"
+                    android:layout_toEndOf="@id/couponIconHelp_iv"
+                    android:background="@null"
+                    android:cursorVisible="true"
+                    android:fontFamily="@font/lexend_light"
+                    android:hint="Enter Coupon Here"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorDarkerBlue"
+                    android:textColorHint="@color/colorGreyHeading"
+                    android:textSize="16sp" />
+
+                <RelativeLayout
+                    android:id="@+id/applyCoupon_rl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/rounded_button_8px"
+                    android:backgroundTint="@color/profileCyan"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen20dp"
+                        android:layout_marginTop="@dimen/dimen10dp"
+                        android:layout_marginEnd="@dimen/dimen20dp"
+                        android:layout_marginBottom="@dimen/dimen10dp"
+                        android:fontFamily="@font/lexend_medium"
+                        android:text="Apply"
+                        android:textColor="@color/colorHeading"
+                        android:textSize="14sp" />
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/couponContainer_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/couponSearch_rl"
+                android:layout_marginTop="@dimen/dimen20dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/quickCoupon_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/noCoupons_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/rounded_button_4px"
+                    android:backgroundTint="#1030b856"
+                    android:fontFamily="@font/lexend_regular"
+                    android:padding="10dp"
+                    android:text="@string/no_coupons_available"
+                    android:textColor="@color/colorDarkerBlue"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/couponSelected_btn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@id/couponContainer_rl"
+                android:layout_margin="@dimen/dimen20dp"
+                android:background="@drawable/rounded_button_30px"
+                android:fontFamily="@font/lexend_medium"
+                android:text="@string/review"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:visibility="gone"
+                app:backgroundTint="@color/colorBlueBtn"
+                app:icon="@drawable/ic_baseline_flash_on_24"
+                app:iconGravity="textStart"
+                app:iconSize="18dp" />
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

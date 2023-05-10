@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: club.cred.android:synth:1.0.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/3c097fef6d28a44401f97eed05df0ae2/transformed/jetified-synth-1.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/3c097fef6d28a44401f97eed05df0ae2/transformed/jetified-synth-1.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/3c097fef6d28a44401f97eed05df0ae2/transformed/jetified-synth-1.0.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/club.cred.android/synth/1.0.0/31ff3d94d7da7c57121be670e87e4f33caeb0919/synth-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

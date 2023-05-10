@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/reviewBasicDetail_cv"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardUseCompatPadding="true"
+    android:layout_marginBottom="@dimen/dimen_15"
+    android:elevation="5dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/orderInfo1_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/whiteShade1"
+            android:padding="@dimen/dimen_15">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/orderServiceIcon_cv"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:elevation="5dp"
+                app:cardUseCompatPadding="true"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="8dp">
+
+                <ImageView
+                    android:id="@+id/orderServiceIcon_iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/walk_1" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/orderServiceName_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_15"
+                android:layout_marginEnd="@dimen/dimen_15"
+                android:layout_toStartOf="@id/orderStatus_tv"
+                android:layout_toEndOf="@id/orderServiceIcon_cv"
+                android:ellipsize="end"
+                android:fontFamily="@font/lexend_medium"
+                android:maxLines="2"
+                android:text="Dry Cleaning"
+                android:textColor="@color/colorHeading"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/orderServiceAddress_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/orderServiceName_tv"
+                android:layout_marginStart="@dimen/dimen_15"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:layout_marginEnd="@dimen/dimen_15"
+                android:layout_toStartOf="@id/orderStatus_tv"
+                android:layout_toEndOf="@id/orderServiceIcon_cv"
+                android:ellipsize="end"
+                android:fontFamily="@font/lexend_light"
+                android:maxLines="2"
+                android:text="Railway Road, Muradnagar"
+                android:textColor="@color/colorSubHeading"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/orderStatus_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_button_4px"
+                android:backgroundTint="@color/successGreenBg"
+                android:fontFamily="@font/lexend_regular"
+                android:paddingStart="10dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="5dp"
+                android:text="Delivered"
+                android:textColor="@color/successGreen"
+                android:textSize="10sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/orderInfo2_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/orderInfo1_rl"
+            android:background="@color/white"
+            android:padding="@dimen/dimen_15">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/orderItems_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/row_item_order_items" />
+
+            <TextView
+                android:id="@+id/orderItemsUnavailable_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_button_4px"
+                android:backgroundTint="@color/colorYellowHighlight"
+                android:fontFamily="@font/lexend_regular"
+                android:padding="@dimen/dimen10dp"
+                android:layout_centerInParent="true"
+                android:text="@string/bill_not_generated_yet"
+                android:textColor="@color/colorYellowLogin"
+                android:textSize="11sp"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/orderInfoDotted_v1"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_below="@id/orderInfo2_rl"
+            android:layout_marginStart="@dimen/dimen_15"
+            android:layout_marginEnd="@dimen/dimen_15"
+            android:background="@drawable/dashed_line"
+            android:backgroundTint="@color/colorPlaceholder" />
+
+        <RelativeLayout
+            android:id="@+id/orderInfo3_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/orderInfoDotted_v1"
+            android:padding="@dimen/dimen_15">
+
+            <TextView
+                android:id="@+id/orderDateTime_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/lexend_regular"
+                android:text="05 May 2023, 10:22PM"
+                android:textColor="@color/colorSubHeading"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/orderNumber_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:fontFamily="@font/lexend_regular"
+                android:text="ORD122"
+                android:textColor="@color/colorHeading"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/orderInfoDotted_v2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/orderInfo3_rl"
+            android:layout_marginStart="@dimen/dimen_15"
+            android:layout_marginEnd="@dimen/dimen_15"
+            android:background="@color/colorPlaceholder" />
+
+        <RelativeLayout
+            android:id="@+id/orderInfo4_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/orderInfoDotted_v2"
+            android:background="@color/white"
+            android:padding="@dimen/dimen_15">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/orderRating_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/row_item_order_rating" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

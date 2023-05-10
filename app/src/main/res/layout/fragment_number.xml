@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_bottom_sheet_round"
+    android:backgroundTint="@color/white"
+    android:padding="@dimen/dimen20dp"
+    tools:context=".ui.NumberFragment">
+
+    <ImageView
+        android:id="@+id/closeNumberFrag_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_baseline_close_24"
+        app:tint="@color/black" />
+
+    <TextView
+        android:id="@+id/enterNumberHeading_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/closeNumberFrag_iv"
+        android:layout_marginTop="@dimen/dimen20dp"
+        android:fontFamily="@font/lexend_medium"
+        android:gravity="center_horizontal"
+        android:text="Enter your number"
+        android:textColor="@color/black"
+        android:textSize="22sp" />
+
+    <RelativeLayout
+        android:id="@+id/updateContactChild_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/enterNumberHeading_tv"
+        android:layout_marginStart="@dimen/dimen10dp"
+        android:layout_marginTop="@dimen/dimen20dp"
+        android:layout_marginEnd="@dimen/dimen10dp"
+        android:background="@drawable/rounded_button_8px"
+        android:backgroundTint="@color/colorHorizontalLine"
+        android:padding="10dp"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/countryCodeWhatsapp_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/lexend_medium"
+            android:text="@string/_91"
+            android:textColor="@color/colorGreyHeading"
+            android:textSize="22sp" />
+
+        <View
+            android:id="@+id/dividerCallback3_v"
+            android:layout_width="1dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dimen20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="@dimen/dimen20dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toEndOf="@id/countryCodeWhatsapp_tv"
+            android:background="@color/colorGreyHeading" />
+
+        <EditText
+            android:id="@+id/loginNumber_et"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="12dp"
+            android:layout_toEndOf="@id/dividerCallback3_v"
+            android:background="@null"
+            android:digits="0123456789"
+            android:fontFamily="@font/lexend_medium"
+            android:gravity="center"
+            android:hint="8899008910"
+            android:imeOptions="actionDone"
+            android:inputType="phone"
+            android:letterSpacing="0.1"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textColorHint="@color/colorGreyHeading"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/submitLogin_btn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/updateContactChild_rl"
+        android:layout_marginStart="@dimen/dimen10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="@dimen/dimen10dp"
+        android:alpha="0.7"
+        android:background="@drawable/rounded_button_8px"
+        android:enabled="false"
+        android:fontFamily="@font/lexend_medium"
+        android:text="Submit"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:backgroundTint="@color/colorBlueBtn"
+        app:icon="@drawable/ic_tick_circle"
+        app:iconGravity="textStart" />
+
+</RelativeLayout>

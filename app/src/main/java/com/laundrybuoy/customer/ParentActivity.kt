@@ -1,13 +1,23 @@
 package com.laundrybuoy.customer
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.tasks.OnCompleteListener
+import com.laundrybuoy.customer.ui.LoginFragment
+import com.laundrybuoy.customer.utils.SharedPreferenceManager
+import com.laundrybuoy.customer.viewmodel.AuthViewModel
 import java.util.*
 import java.util.concurrent.TimeUnit
 
@@ -18,6 +28,9 @@ open class ParentActivity : AppCompatActivity() {
     var fragmentStack3: MutableList<String> = ArrayList()
     var fragmentStack4: MutableList<String> = ArrayList()
     var fragmentStack5: MutableList<String> = ArrayList()
+    private val authViewModel by viewModels<AuthViewModel>()
+    lateinit var mGoogleSignInClient: GoogleSignInClient
+
 
     override fun onDestroy() {
         super.onDestroy()
@@ -27,6 +40,16 @@ open class ParentActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
 
+        initGoogle()
+    }
+
+    private fun initGoogle() {
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.OAuth_SSO))
+            .requestEmail() //request email id
+            .build()
+
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
     }
 
     open fun getHeaders(): Map<String, String>? {
@@ -140,6 +163,119 @@ open class ParentActivity : AppCompatActivity() {
                 }
             }
         }
+        ft.commit()
+    }
+    open fun addFragmentTransition(
+        isToAdd: Boolean,
+        layoutPos: Int,
+        fragment: Fragment,
+        itemScratchRootCv: CardView,
+        transitionName: String
+    ) {
+        var id = R.id.rlFragmentContainer1
+        when (layoutPos) {
+            0, 1 -> id = R.id.rlFragmentContainer1
+            2 -> id = R.id.rlFragmentContainer2
+            3 -> id = R.id.rlFragmentContainer3
+            4 -> id = R.id.rlFragmentContainer4
+            5 -> id = R.id.rlFragmentContainer5
+        }
+        findViewById<View>(id).visibility = View.VISIBLE
+        val fm = supportFragmentManager
+        val ft = fm.beginTransaction()
+        ft.setTransition(FragmentTransaction.TRANSIT_NONE)
+        if (isToAdd) {
+            val currFragment: Fragment? = getCurrentFragment()
+            if (currFragment != null) {
+                ft.hide(currFragment)
+            }
+            val tag = fragment.javaClass.canonicalName + "_" + System.currentTimeMillis()
+            ft.add(id, fragment, tag)
+            when (layoutPos) {
+                0, 1 -> {
+                    findViewById<View>(R.id.rlFragmentContainer2).visibility = View.GONE
+                    findViewById<View>(R.id.rlFragmentContainer3).visibility = View.GONE
+                    findViewById<View>(R.id.rlFragmentContainer4).visibility = View.GONE
+                    findViewById<View>(R.id.rlFragmentContainer5).visibility = View.GONE
+                    fragmentStack1.add(tag)
+                }
+                2 -> {
+                    findViewById<View>(R.id.rlFragmentContainer1).visibility = View.GONE
+                    findViewById<View>(R.id.rlFragmentContainer3).visibility = View.GONE
+                    findViewById<View>(R.id.rlFragmentContainer4).visibility = View.GONE
+                    findViewById<View>(R.id.rlFragmentContainer5).visibility = View.GONE
+                    fragmentStack2.add(tag)
+                }
+                3 -> {
+                    findViewById<View>(R.id.rlFragmentContainer2).visibility = View.GONE
+                    findViewById<View>(R.id.rlFragmentContainer1).visibility = View.GONE
+                    findViewById<View>(R.id.rlFragmentContainer4).visibility = View.GONE
+                    findViewById<View>(R.id.rlFragmentContainer5).visibility = View.GONE
+                    fragmentStack3.add(tag)
+                }
+                4 -> {
+                    findViewById<View>(R.id.rlFragmentContainer2).visibility = View.GONE
+                    findViewById<View>(R.id.rlFragmentContainer3).visibility = View.GONE
+                    findViewById<View>(R.id.rlFragmentContainer1).visibility = View.GONE
+                    findViewById<View>(R.id.rlFragmentContainer5).visibility = View.GONE
+                    fragmentStack4.add(tag)
+                }
+                5 -> {
+                    findViewById<View>(R.id.rlFragmentContainer2).visibility = View.GONE
+                    findViewById<View>(R.id.rlFragmentContainer3).visibility = View.GONE
+                    findViewById<View>(R.id.rlFragmentContainer4).visibility = View.GONE
+                    findViewById<View>(R.id.rlFragmentContainer1).visibility = View.GONE
+                    fragmentStack5.add(tag)
+                }
+            }
+        } else {
+            fm.popBackStack()
+            val tag = fragment.javaClass.canonicalName + "_" + System.currentTimeMillis()
+            ft.replace(id, fragment, tag)
+            when (layoutPos) {
+                0, 1 -> {
+                    fragmentStack1.clear()
+                    fragmentStack1.add(tag)
+                    findViewById<View>(R.id.rlFragmentContainer2).visibility = View.GONE
+                    findViewById<View>(R.id.rlFragmentContainer3).visibility = View.GONE
+                    findViewById<View>(R.id.rlFragmentContainer4).visibility = View.GONE
+                    findViewById<View>(R.id.rlFragmentContainer5).visibility = View.GONE
+                }
+                2 -> {
+                    fragmentStack2.clear()
+                    fragmentStack2.add(tag)
+                    findViewById<View>(R.id.rlFragmentContainer1).visibility = View.GONE
+                    findViewById<View>(R.id.rlFragmentContainer3).visibility = View.GONE
+                    findViewById<View>(R.id.rlFragmentContainer4).visibility = View.GONE
+                    findViewById<View>(R.id.rlFragmentContainer5).visibility = View.GONE
+                }
+                3 -> {
+                    fragmentStack3.clear()
+                    fragmentStack3.add(tag)
+                    findViewById<View>(R.id.rlFragmentContainer2).visibility = View.GONE
+                    findViewById<View>(R.id.rlFragmentContainer1).visibility = View.GONE
+                    findViewById<View>(R.id.rlFragmentContainer4).visibility = View.GONE
+                    findViewById<View>(R.id.rlFragmentContainer5).visibility = View.GONE
+                }
+                4 -> {
+                    fragmentStack4.clear()
+                    fragmentStack4.add(tag)
+                    findViewById<View>(R.id.rlFragmentContainer2).visibility = View.GONE
+                    findViewById<View>(R.id.rlFragmentContainer3).visibility = View.GONE
+                    findViewById<View>(R.id.rlFragmentContainer1).visibility = View.GONE
+                    findViewById<View>(R.id.rlFragmentContainer5).visibility = View.GONE
+                }
+                5 -> {
+                    fragmentStack5.clear()
+                    fragmentStack5.add(tag)
+                    findViewById<View>(R.id.rlFragmentContainer2).visibility = View.GONE
+                    findViewById<View>(R.id.rlFragmentContainer3).visibility = View.GONE
+                    findViewById<View>(R.id.rlFragmentContainer4).visibility = View.GONE
+                    findViewById<View>(R.id.rlFragmentContainer1).visibility = View.GONE
+                }
+            }
+        }
+        ft.addSharedElement(itemScratchRootCv, transitionName);
         ft.commit()
     }
 
@@ -307,6 +443,7 @@ open class ParentActivity : AppCompatActivity() {
     }
 
     open fun hideKeyboard() {
+
         try {
             val view = currentFocus
             if (view != null) {
@@ -320,6 +457,27 @@ open class ParentActivity : AppCompatActivity() {
         } catch (e: Exception) {
             e.printStackTrace()
         }
+    }
+
+    fun logout(isToRelaunchApp: Boolean) {
+        clearBackStack(0)
+        if (isToRelaunchApp) {
+            SharedPreferenceManager.sharedPreferences?.edit()?.clear()?.apply()
+            authViewModel.logOut()
+            signOutGoogle()
+            finish()
+            val intent = Intent(applicationContext, MainActivity::class.java)
+            startActivity(intent)
+        } else {
+            addFragment(true, getVisibleFrame(), LoginFragment())
+        }
+    }
+
+    private fun signOutGoogle() {
+        mGoogleSignInClient.signOut().addOnCompleteListener(this,
+            OnCompleteListener<Void?> {
+
+            })
     }
 
 

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/dimen10dp"
+        android:layout_marginEnd="@dimen/dimen10dp">
+
+        <TextView
+            android:id="@+id/plus_intro_heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/lexend_bold"
+            android:maxLines="2"
+            android:text="Nikhar"
+            android:textAlignment="center"
+            android:textColor="@color/colorHeading"
+            android:textSize="28dp" />
+
+        <TextView
+            android:id="@+id/plus_intro_subheading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/plus_intro_heading"
+            android:layout_marginTop="@dimen/dimen20dp"
+            android:fontFamily="@font/lexend_medium"
+            android:text="@string/lorem_ipsum"
+            android:textAlignment="center"
+            android:maxLines="4"
+            android:ellipsize="end"
+            android:textColor="@color/colorSubHeading"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

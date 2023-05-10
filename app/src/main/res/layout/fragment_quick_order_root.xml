@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_bottom_sheet_round"
+    android:backgroundTint="@color/white"
+    android:padding="@dimen/dimen20dp"
+    tools:context=".ui.quick.QuickOrderRootFragment">
+
+    <ImageView
+        android:id="@+id/closeQuickOrder_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_baseline_close_24"
+        app:tint="@color/black" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/quickOrder_tl"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_below="@id/closeQuickOrder_iv"
+        android:layout_marginTop="20dp"
+        android:clipToPadding="true"
+        android:visibility="gone"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:tabIndicatorHeight="0dp"
+        app:tabMode="scrollable"
+        app:tabPaddingEnd="10dp"
+        app:tabPaddingStart="10dp"
+        app:tabSelectedTextColor="@color/colorHeading"
+        app:tabTextAppearance="@style/CustomTextAppearanceVendorTab"
+        app:tabTextColor="@color/colorSubHeading" />
+
+    <com.laundrybuoy.customer.utils.SwipeLockViewPager
+        android:id="@+id/quickOrder_vp"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_below="@id/quickOrder_tl"
+        android:layout_marginTop="@dimen/dimen20dp"
+        android:clipToPadding="false"
+        android:nestedScrollingEnabled="true" />
+
+</RelativeLayout>

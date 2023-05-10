@@ -7,7 +7,6 @@ plugins {
     id 'com.google.gms.google-services'
     id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
     id 'kotlin-parcelize'
-
 }
 
 android {
@@ -29,9 +28,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    buildFeatures {
-        dataBinding true
-    }
+
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -43,6 +40,9 @@ android {
     }
 
     viewBinding.enabled true
+    buildFeatures {
+        dataBinding true
+    }
 }
 
 def lottieVersion = "3.4.0"
@@ -148,5 +148,15 @@ dependencies {
     //Crop
     implementation 'com.github.CanHub:Android-Image-Cropper:4.3.1'
     implementation 'com.github.stfalcon-studio:StfalconImageViewer:v1.0.1'
+
+    //Synth - Cred
+    implementation 'club.cred.android:synth:1.0.0'
+
+    //SMS
+    implementation 'com.google.android.gms:play-services-auth:20.1.0'
+    implementation 'com.google.android.gms:play-services-auth-api-phone:18.0.1'
+
+    //ToolTip
+    implementation "com.github.skydoves:balloon:1.4.7"
 
 }

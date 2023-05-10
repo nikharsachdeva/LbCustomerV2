@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/synth_color"
+    tools:context=".ui.ScratchCardDetailFragment">
+
+    <ImageView
+        android:id="@+id/closeScratchDetail_iv"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="40dp"
+        android:src="@drawable/ic_baseline_close_24" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/itemScratchRoot_cv"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_centerHorizontal="true"
+            android:elevation="5dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center">
+
+                <RelativeLayout
+                    android:id="@+id/scratchCardMain_rl"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorDarkerBlue"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:alpha="0.5"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/scratch_card_stars" />
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/coinZoomLottie_lv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        app:lottie_autoPlay="false"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/coin_zoom"
+                        app:lottie_speed="0.5" />
+
+                    <TextView
+                        android:id="@+id/scratchCardValue_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/lexend_bold"
+                        android:textColor="@color/white"
+                        android:textSize="40sp" />
+
+
+                </RelativeLayout>
+
+                <com.anupkumarpanwar.scratchview.ScratchView
+                    android:id="@+id/scratchViewDetail_sv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible"
+                    app:overlay_height="250dp"
+                    app:overlay_image="@drawable/scratch_card_unrevealed"
+                    app:overlay_width="250dp"
+                    app:tile_mode="CLAMP" />
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/itemScratchHeading_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/itemScratchRoot_cv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/dimen20dp"
+            android:layout_marginEnd="@dimen/dimen20dp"
+            android:layout_marginTop="@dimen/dimen20dp"
+            android:textAlignment="center"
+            android:fontFamily="@font/lexend_medium"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/itemScratchSubHeading_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/itemScratchHeading_tv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dimen10dp"
+            android:layout_marginStart="@dimen/dimen20dp"
+            android:layout_marginEnd="@dimen/dimen20dp"
+            android:textAlignment="center"
+            android:fontFamily="@font/lexend_regular"
+            android:textColor="@color/colorGreyHeading"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/confettiLottie_lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:lottie_autoPlay="false"
+        app:lottie_loop="false"
+        app:lottie_rawRes="@raw/confetti"
+        app:lottie_speed="1" />
+
+</RelativeLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="isSelected"
+            type="Boolean" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/addressTypeRoot_rl"
+        isSelected="@{isSelected}"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dimen10dp"
+        android:background="@drawable/bg_item_type_selector"
+        android:padding="@dimen/dimen10dp">
+
+        <ImageView
+            android:id="@+id/address_type_icon_iv"
+            android:layout_width="14dp"
+            android:layout_height="14sp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dimen_5dp"
+            android:src="@drawable/address_home"
+            app:tint="@color/colorHeading" />
+
+        <TextView
+            android:id="@+id/address_type_title_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dimen10dp"
+            android:layout_marginEnd="@dimen/dimen_5dp"
+            android:textSize="14sp"
+            android:layout_toEndOf="@id/address_type_icon_iv"
+            android:fontFamily="@font/lexend_regular"
+            android:text="Home"
+            android:textColor="@color/colorHeading" />
+    </RelativeLayout>
+
+
+</layout>
+
